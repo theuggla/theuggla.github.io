@@ -1,0 +1,38 @@
+<header class="header">
+    <div class="wrapper">
+        <h1><a href="{{site.baseurl}}/">{{site.author | downcase}}</a></h1>
+        <aside class="links">
+            <ul>
+            {% if site.github_username %}
+             <li>
+                 <a href="https://github.com/{{site.github_username}}"><img src="{{site.baseurl}}/assets/github_icon.jpg" /></a>
+             </li>
+            {% endif %}
+            {% if site.tumblr_username %}
+            <li>
+                <a href="https://github.com/{{site.tumblr_username}}"><img src="{{site.baseurl}}/assets/tumblr_icon.jpg" /></a>
+            </li>
+            {% endif %}
+            {% if site.instagram_username %}
+            <li>
+                <a href="https://github.com/{{site.instagram_username}}"><img src="{{site.baseurl}}/assets/instagram_icon.jpg" /></a>
+            </li>
+            {% endif %}
+            {% if site.twitter_username %}
+            <li>
+                <a href="https://github.com/{{site.twitter_username}}"><img src="{{site.baseurl}}/assets/twitter_icon.jpg" /></a>
+            </li>
+            {% endif %}
+            </ul>
+        </aside>
+        <nav class="globalnav">
+            <ul>
+                <li>
+                    <a href="{{site.baseurl}}">home</a>
+                    <a href="{{site.baseurl}}/projects.html">projects</a>
+                    <a href="{{site.baseurl}}/blog.html">blog</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>

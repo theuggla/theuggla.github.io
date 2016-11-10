@@ -1,8 +1,0 @@
-.idea
-.vagrant
-Gemfile.lock
-node_modules
-_site/
-.sass-cache/
-.jekyll-metadata
-src/.idea
