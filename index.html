@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<div class="home">
+    <div id="about">
+        <h1>om mig</h1>
+        <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+        <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+        <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+    </div>
+
+    <div id="latest-post">
+  <h1>latest post</h1>
+  <ul>
+    {% for post in site.posts limit:1 %}
+      <li>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+    </div>
+
+    <section id="projects">
+        {% for collection in site.collections %}
+        {% if collection.label == "projects" %}
+        {% for category in collection.categories limit:3 %}
+        <div id="{{category}}">
+            <h2>{{category}}</h2>
+            <p>blabla bla description</p>
+            <a href="{{site.baseurl}}/projects.html/#{{category}}">Go to {{category}}</a>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+    </section>
+</div>
