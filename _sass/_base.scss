@@ -1,5 +1,84 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: 'aqua_grotesqueregular';
+    src: url('../assets/fonts/aqua/aqua-webfont.woff2') format('woff2'),
+    url('../assets/fonts/aqua/aqua-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bikoregular';
+    src: url('../assets/fonts/biko/biko_regular-webfont.woff2') format('woff2'),
+    url('../assets/fonts/biko/biko_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'chaseregular';
+    src: url('../assets/fonts/chase/chase-webfont.woff2') format('woff2'),
+    url('../assets/fonts/chase/chase-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'high_tideregular';
+    src: url('../assets/fonts/hightide/hightide-webfont.woff2') format('woff2'),
+    url('../assets/fonts/hightide/hightide-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'refugemedium';
+    src: url('../assets/fonts/refuge/refuge-webfont.woff2') format('woff2'),
+    url('../assets/fonts/refuge/refuge-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'canterbold_strips';
+    src: url('../assets/fonts/canter/canter_bold_strips-webfont.woff2') format('woff2'),
+    url('../assets/fonts/canter/canter_bold_strips-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'canterbold';
+    src: url('../assets/fonts/canter/canter_bold-webfont.woff2') format('woff2'),
+    url('../assets/fonts/canter/canter_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'canterlight';
+    src: url('../assets/fonts/canter/canter_light-webfont.woff2') format('woff2'),
+    url('../assets/fonts/canter/canter_light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'canteroutline';
+    src: url('../assets/fonts/canter/canter_outline-webfont.woff2') format('woff2'),
+    url('../assets/fonts/canter/canter_outline-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 // Our variables
 
 //font related
@@ -23,14 +102,13 @@ $on-laptop:        800px;
 
 body {
     font-size: 100%;
-    font-family: "Times New Roman", serif;
     background-color: $grey-color-light;
+    background-image: url(../assets/backgrounds/lovpapper.jpg);
     text-align: center;
 }
 
 .content-wrapper {
     margin: 0 auto;
-    max-width: $content-width;
 }
 
 h1 {

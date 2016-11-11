@@ -1,12 +1,14 @@
 nav {
-    a {
-        display: inline-block;
-        text-align: center;
+    ul {
+        a, li {
+            display: inline-block;
+            text-align: center;
+        }
     }
 }
 
 .globalnav {
-    margin: 1em;
+    margin: 1em 10%;
     height: 3em;
 
     ul {
@@ -17,5 +19,6 @@ nav {
         text-align: center;
         margin-left: 1em;
         font-size: 2em;
+        font-family: aqua_grotesqueregular, serif;
     }
 }
