@@ -1,3 +1,21 @@
 nav {
-    padding: 1em;
+    a {
+        display: inline-block;
+        text-align: center;
+    }
+}
+
+.globalnav {
+    margin: 1em;
+    height: 3em;
+
+    ul {
+        float: right;
+    }
+
+    a {
+        text-align: center;
+        margin-left: 1em;
+        font-size: 2em;
+    }
 }

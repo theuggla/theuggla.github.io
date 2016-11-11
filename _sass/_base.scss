@@ -30,8 +30,6 @@ body {
 
 .content-wrapper {
     margin: 0 auto;
-    border-style: solid;
-    color: yellow;
     max-width: $content-width;
 }
 
@@ -39,6 +37,7 @@ h1 {
     font-size: 4em;
 }
 
-li, a{
-    display: inline-block;
+a:focus, a:hover, a:active {
+    border-bottom-style: solid;
+    font-weight: bold;
 }
