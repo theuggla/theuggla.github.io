@@ -1,40 +1,40 @@
 ---
-layout: default
-url: /projects
+layout: page
+title: projects
+weight: 2
 ---
-{% for collection in site.collections %}
-{% if collection.label == "projects" %}
-{% for category in collection.categories %}
-<nav class="localnav">
-    <ul>
-        <li>
-            <a href="{{site.baseurl}}{{page.url}}/#{{category}}">{{category}}</a>
-        </li>
-    </ul>
-</nav>
-{% endfor %}
+
+{% for collection in site.collections | where: "collection.label","projects" %}
+
+{% if collection.categories.size > 3 %}
+    {% assign projects = "many" %}
+    {% for category in collection.categories %}
+    <nav class="localnav">
+        <ul>
+            <li>
+                <a href="{{site.baseurl}}{{page.url}}/#{{category}}">{{category}}</a>
+            </li>
+        </ul>
+    </nav>
+    {% endfor %}
+{% else %}
+    {% assign projects = "few" %}
 {% endif %}
-{% endfor %}
 
-<h1 class="page-heading">Posts</h1>
-
-
-{% for collection in site.collections %}
-{% if collection.label == "projects" %}
 {% for category in collection.categories %}
-<section class="content-wrapper">
-<h2 id="{{category}}">{{category}}</h2>
-<ul class="project-list">
-    {% for project in site.projects %}
-    {% if project.category == category %}
+    <section class="{{projects}}">
+        <h2 id="{{category}}">{{category}}</h2>
+        <ul>
+        {% for project in site.projects %}
+        {% if project.category == category %}
             <li>
                 <h3>{{ project.title | escape }}</h3>
                 {{project.content}}
             </li>
-    {% endif %}
-    {% endfor %}
-</ul>
+        {% endif %}
+        {% endfor %}
+        </ul>
     </section>
 {% endfor %}
-{% endif %}
+
 {% endfor %}

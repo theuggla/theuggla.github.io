@@ -1,9 +1,13 @@
-.project-category {
+
+.few {
     border-right-style: solid;
     float: left;
-    width: $content-width / 2
+    width: $content-width / 3;
 }
 
-.project-category:nth-of-type(2n) {
-    border-right-style: none;
+
+.many {
+    width: $content-width / 2;
+    float: none;
+    margin: $center;
 }
