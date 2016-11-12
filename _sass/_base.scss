@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+//fonts
 @font-face {
     font-family: 'aqua_grotesqueregular';
     src: url('../assets/fonts/aqua/aqua-webfont.woff2') format('woff2'),
@@ -43,76 +44,40 @@
 
 }
 
-@font-face {
-    font-family: 'canterbold_strips';
-    src: url('../assets/fonts/canter/canter_bold_strips-webfont.woff2') format('woff2'),
-    url('../assets/fonts/canter/canter_bold_strips-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'canterbold';
-    src: url('../assets/fonts/canter/canter_bold-webfont.woff2') format('woff2'),
-    url('../assets/fonts/canter/canter_bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'canterlight';
-    src: url('../assets/fonts/canter/canter_light-webfont.woff2') format('woff2'),
-    url('../assets/fonts/canter/canter_light-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'canteroutline';
-    src: url('../assets/fonts/canter/canter_outline-webfont.woff2') format('woff2'),
-    url('../assets/fonts/canter/canter_outline-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-// Our variables
-
-//font related
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
-
-$spacing-unit:     30px;
-
-//background related
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-// Width of the content area
-$content-width:    1000px;
-$on-palm:          600px;
-$on-laptop:        800px;
-
+//main stuff
 body {
-    font-size: 100%;
+    font-size: $base-font-size;
+    font-family: $base-font-family;
+    text-align: justify;
     background-color: $grey-color-light;
     background-image: url(../assets/backgrounds/lovpapper.jpg);
-    text-align: center;
 }
 
 .content-wrapper {
-    margin: 0 auto;
+    max-width: $content-width;
+    margin: $center;
 }
 
+//headlines
 h1 {
-    font-size: 4em;
+    font-size: $big-font-size * 2;
+    font-family: bikoregular, serif;
+}
+
+h2, h3, h4, h5 {
+    font-family: $headlines;
+}
+
+
+//links
+ul {
+    li {
+        display: inline-block;
+    }
+
+    a {
+        display: inline-block;
+    }
 }
 
 a:focus, a:hover, a:active {
