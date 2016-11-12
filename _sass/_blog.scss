@@ -1,0 +1,80 @@
+.blog {
+    overflow: auto;
+
+    .localnav {
+        width: 15%;
+        float: right;
+        margin-top: $base-sizing;
+
+        h3 {
+            text-align: right;
+            font-family: aqua_grotesqueregular, serif;
+            margin-bottom: $base-spacing * 0.5;
+        }
+
+        li {
+            padding: 0;
+            display: block;
+            text-align: right;
+
+        }
+
+        a {
+            font-size: $base-font-size * 0.8;
+        }
+
+        a:hover, a:active, a:focus {
+            border-bottom-style: none;
+        }
+    }
+
+    #posts {
+        width: 75%;
+        float: left;
+        overflow: auto;
+        margin-top: $base-sizing;
+
+        a {
+
+            h3 {
+                float: left;
+                margin-bottom: $base-spacing;
+                font-size: $base-font-size * 1.4;
+            }
+
+            p {
+                float: right;
+                font-size: $base-font-size * 0.8;
+            }
+        }
+
+        p {
+            clear: both;
+        }
+
+        #post {
+            padding-bottom: $base-spacing * 1;
+            margin: $base-spacing * 2.5;
+            border-bottom-style: ridge;
+            border-width: 0.3em;
+        }
+
+        #post:last-of-type {
+            border-bottom-style: none;
+        }
+
+        #post:first-of-type {
+            margin-top: 0;
+        }
+    }
+}
+
+.post {
+    width: 70%;
+    margin: $center;
+}
+
+.post-content {
+    margin-top: $base-spacing * 2;
+    padding-bottom: $base-spacing * 2;
+}

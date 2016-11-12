@@ -5,6 +5,10 @@ nav {
             text-align: center;
             font-family: $navigation;
         }
+
+        a:focus, a:hover, a:active {
+            border-bottom-style: solid;
+        }
     }
 }
 

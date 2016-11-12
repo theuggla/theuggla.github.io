@@ -8,7 +8,7 @@
 $base-font-family: Calibri, Helvetica, Arial, sans-serif;
 $navigation: aqua_grotesqueregular, serif;
 $headlines: chaseregular, serif;
-$base-font-size:   100%;
+$base-font-size:   1em;
 $big-font-size:  $base-font-size * 2;
 
 //space related
@@ -25,16 +25,22 @@ $grey-color-dark:  darken($grey-color, 25%);
 $content-width:    1000px;
 $on-palm:          600px;
 $on-laptop:        800px;
+
+//import bases
 @import '_reset';
 @import '_base';
 
+
+//header styles
 header {
     overflow: auto;
     background-color: white;
 
     .wrapper {
         margin: $center;
+        padding: 0.5em 0;
         max-width: $content-width;
+
     }
 
     h1 {
@@ -47,11 +53,10 @@ header {
 
     aside {
         float: right;
-        margin: 2em 0 1em;
 
         li {
             display: inline-block;
-            margin: 0.2em;
+            margin: 1.5em 0.2em 0;
         }
 
         img {
@@ -62,14 +67,10 @@ header {
     }
 }
 
-.home {
-    max-width: $content-width;
-    overflow: auto;
-
+//home styles
     #about {
         width: 30%;
         float: left;
-        margin-bottom: $base-sizing;
     }
 
     #projects {
@@ -92,31 +93,30 @@ header {
             padding: 0.5em;
             padding-bottom: 0;
 
+        }
     }
-}
 
-
+//footer styles
 footer {
     background-color: white;
-    height: $base-sizing;
-    position: fixed;
-    left: 0;
-    bottom: 0;
     width: 100%;
+    overflow: auto;
+    height: $base-sizing;
+    position:absolute;
+    bottom:0;
+    left:0;
 
     a {
         float: right;
-        margin: 1.5em;
-        margin-top: 0.4em;
 
         img {
-            height: $base-sizing;
+            height: $base-sizing - 0.3em;
             width: auto;
-            padding-bottom: $base-spacing;
         }
     }
 }
 
 @import '_menu';
 @import '_projects';
+@import '_blog';
 

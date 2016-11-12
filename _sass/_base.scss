@@ -27,25 +27,17 @@
 }
 
 @font-face {
-    font-family: 'high_tideregular';
-    src: url('../assets/fonts/hightide/hightide-webfont.woff2') format('woff2'),
-    url('../assets/fonts/hightide/hightide-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'refugemedium';
-    src: url('../assets/fonts/refuge/refuge-webfont.woff2') format('woff2'),
-    url('../assets/fonts/refuge/refuge-webfont.woff') format('woff');
+    font-family: 'simplificasimplifica';
+    src: url('../assets/fonts/simplifica_typeface-webfont.woff2') format('woff2'),
+    url('../assets/fonts/simplifica_typeface-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
 }
 
 //main stuff
-body {
+html, body {
+    height: 100%;
     font-size: $base-font-size;
     font-family: $base-font-family;
     text-align: justify;
@@ -53,9 +45,15 @@ body {
     background-image: url(../assets/backgrounds/lovpapper.jpg);
 }
 
+.wrapper {
+    min-height: 100%;
+    position: relative;
+}
+
 .content-wrapper {
     max-width: $content-width;
     margin: $center;
+    padding-bottom: $base-sizing;
     overflow: auto;
 }
 
@@ -65,13 +63,14 @@ h1 {
     font-family: bikoregular, serif;
 }
 
-h2, h3, h4, h5 {
+h2 {
     font-family: $headlines;
-    font-size: $base-font-size;
+    font-size: $big-font-size;
 }
 
-h2 {
-    font-size: $big-font-size;
+h3, h4, h5 {
+    font-family: simplificasimplifica, serif;
+    font-size: $base-font-size;
 }
 
 
@@ -87,6 +86,5 @@ ul {
 }
 
 a:focus, a:hover, a:active {
-    border-bottom-style: solid;
     font-weight: bold;
 }
