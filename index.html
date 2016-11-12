@@ -1,34 +1,30 @@
 ---
-layout: default
 title: home
 weight: 1
 ---
 
-<div class="home">
-        <div id="about">
-            <h2>om mig</h2>
-            <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-            bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-            bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
-            <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
-            <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
-        </div>
+<section id="about">
+    <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+        bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+        bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+    <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+        bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+        bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+    <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+        bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+        bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+</section>
 
-    <section id="projects">
-        {% for collection in site.collections %}
-        {% if collection.label == "projects" %}
-        {% for category in collection.categories limit:3 %}
-        <div id="{{category}}">
-            <h2>{{category}}</h2>
-            <p>blabla bla description</p>
-            <a href="{{site.baseurl}}/projects.html/#{{category}}">Go to {{category}}</a>
-        </div>
-        {% endfor %}
-        {% endif %}
-        {% endfor %}
-    </section>
-</div>
+<section id="projects">
+    {% for collection in site.collections %}
+    {% if collection.label == "projects" %}
+    {% for category in collection.categories limit:3 %}
+    <div id="{{category}}">
+        <h2>{{category}}</h2>
+        <p>blablabla description</p>
+        <a href="{{site.baseurl}}/projects.html/#{{category}}">go to {{category}}</a>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endfor %}
+</section>

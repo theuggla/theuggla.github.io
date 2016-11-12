@@ -22,10 +22,16 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 author: Molly Arhammar
-twitter_username:
+
+#usernames
+twitter_username: bla
 github_username: theuggla
-tumblr_username:
-instagram_username:
+tumblr_username: bla
+instagram_username: bla
+facebook_username: bla
+skype_username: bla
+youtube_username: bla
+pinterest_username: bla
 
 # Build settings
 markdown: kramdown
@@ -34,5 +40,20 @@ theme: minima
 # Collections
 collections:
   projects:
-    categories: [code, image]
+    categories: [code, design, publish]
+
+# Defaults
+defaults:
+  -
+     scope:
+        path: ""
+     values:
+        layout: "default"
+  -
+     scope:
+        path: ""
+        type: "posts"
+     values:
+        layout: "post"
+
 
