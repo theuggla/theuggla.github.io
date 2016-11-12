@@ -21,4 +21,16 @@ nav {
         margin-left: $base-spacing;
         font-size: $big-font-size;
     }
+
+    a.active {
+        border-bottom-style: solid;
+    }
+}
+
+.localnav {
+    float: right;
+
+    li {
+        padding: $base-spacing / 2;
+    }
 }

@@ -1,13 +1,74 @@
 
-.few {
-    border-right-style: solid;
-    float: left;
-    width: $content-width / 3;
-}
-
-
 .many {
     width: $content-width / 2;
     float: none;
     margin: $center;
+    margin-top: $base-sizing;
+
+    h2 {
+        font-size: $base-font-size * 2.2;
+        padding-left: $base-spacing / 2;
+    }
+
+    ul {
+
+        margin-top: $base-spacing * 2;
+        text-align: left;
+
+        li {
+            display: block;
+            margin: $base-spacing;
+            padding: $base-spacing / 2 0;
+            border-bottom-style: ridge;
+            border-width: 0.3em;
+
+            h3 {
+                margin-bottom: $base-spacing / 2;
+                font-size: $base-font-size * 1.4;
+            }
+
+            a {
+                display: block;
+                font-weight: bold;
+                text-align: left;
+            }
+
+            a:hover, a:active, a:focus {
+                border-bottom-style: none;
+                text-decoration: underline;
+            }
+
+        }
+
+        li:last-of-type {
+            border-bottom-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            float: right;
+        }
+    }
+
+}
+
+.few {
+    @extend .many;
+
+    width: $content-width / 3;
+    float: left;
+
+    ul {
+        border-right-style: ridge;
+        border-width: 0.3em;
+
+        a {
+            text-align: right;
+        }
+    }
+
+}
+
+.few:last-of-type {
+    border-right-style: none;
 }
