@@ -1,0 +1,122 @@
+---
+
+---
+
+// Our variables
+
+//font related
+$base-font-family: Calibri, Helvetica, Arial, sans-serif;
+$navigation: aqua_grotesqueregular, serif;
+$headlines: chaseregular, serif;
+$base-font-size:   100%;
+$big-font-size:  $base-font-size * 2;
+
+//space related
+$center: 0 auto;
+$base-spacing: 1em;
+$base-sizing: 5em;
+
+//background related
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    1000px;
+$on-palm:          600px;
+$on-laptop:        800px;
+@import '_reset';
+@import '_base';
+
+header {
+    overflow: auto;
+    background-color: white;
+
+    .wrapper {
+        margin: $center;
+        max-width: $content-width;
+    }
+
+    h1 {
+        float: left;
+    }
+
+    a:active, a:hover {
+        border-style: none;
+    }
+
+    aside {
+        float: right;
+        margin: 2em 0 1em;
+
+        li {
+            display: inline-block;
+            margin: 0.2em;
+        }
+
+        img {
+            height: $big-font-size;
+            width: auto;
+        }
+
+    }
+}
+
+.home {
+    max-width: $content-width;
+    overflow: auto;
+
+    #about {
+        width: 30%;
+        float: left;
+        margin-bottom: $base-sizing;
+    }
+
+    #projects {
+        float: right;
+        width: 60%;
+        margin-top: 10em;
+        text-align: right;
+
+        h2 {
+            font-family: $headlines;
+            font-size: $big-font-size;
+            margin-bottom: 0.3em;
+        }
+
+        div {
+            border-right-style: ridge;
+            border-width: 0.3em;
+            width: 33%;
+            float: left;
+            padding: 0.5em;
+            padding-bottom: 0;
+
+    }
+}
+
+
+footer {
+    background-color: white;
+    height: $base-sizing;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    a {
+        float: right;
+        margin: 1.5em;
+        margin-top: 0.4em;
+
+        img {
+            height: $base-sizing;
+            width: auto;
+            padding-bottom: $base-spacing;
+        }
+    }
+}
+
+@import '_menu';
+@import '_projects';
+
