@@ -6,6 +6,15 @@
         float: right;
         margin-top: $base-sizing;
 
+        @include laptop {
+            width: 20%;
+        }
+
+        @include tablet {
+            display: none;
+            width: 0;
+        }
+
         h3 {
             text-align: right;
             font-family: aqua_grotesqueregular, serif;
@@ -26,6 +35,15 @@
         a:hover, a:active, a:focus {
             border-bottom-style: none;
         }
+
+        @include small-laptop {
+            width: 20%;
+
+            li, a, h3 {
+                text-align: left;
+                padding-right: $base-spacing;
+            }
+        }
     }
 
     #posts {
@@ -33,6 +51,10 @@
         float: left;
         overflow: auto;
         margin-top: $base-sizing;
+
+        @include tablet {
+            width: 100%;
+        }
 
         p.date {
             float: right;

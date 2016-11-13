@@ -12,6 +12,11 @@ header {
 
     h1 {
         float: left;
+
+        @include phone {
+            font-size: $big-font-size * 1.5;
+        }
+
     }
 
     a:active, a:hover {
@@ -28,8 +33,26 @@ header {
         img {
             height: $big-font-size;
             width: auto;
+
+            @include phone {
+                height: $base-font-size * 1.5;
+                width: auto;
+            }
         }
 
+    }
+
+    @include small-laptop {
+
+        .wrapper {
+            max-width: $small-laptop-width;
+            text-align: center;
+        }
+
+        h1, aside {
+            display: block;
+            float: none;
+        }
     }
 }
 

@@ -25,10 +25,12 @@ $grey-color-dark:  darken($grey-color, 25%);
 
 // Width of the content area
 $content-width:    1000px;
-$on-palm:          600px;
-$on-laptop:        800px;
+$tablet-width:          600px;
+$small-laptop-width:        1000px;
+$phone-width: 400px;
 
 //import bases
+@import '_mediaqueries';
 @import '_reset';
 @import '_base';
 @import '_headandfoot';
@@ -38,6 +40,13 @@ $on-laptop:        800px;
     #about {
         width: 30%;
         float: left;
+
+        @include small-laptop {
+            width: 80%;
+            float: none;
+            margin: $center;
+            margin-top: $base-spacing * 2;
+        }
     }
 
     #projects {
@@ -45,6 +54,15 @@ $on-laptop:        800px;
         width: 60%;
         margin-top: $base-sizing * 2;
         text-align: right;
+
+        @include small-laptop {
+            float: none;
+            clear: both;
+            width: 100%;
+            margin: $center;
+            margin-top: $base-spacing * 2;
+            overflow: auto;
+        }
 
         h2 {
             font-family: $headlines;
@@ -59,8 +77,23 @@ $on-laptop:        800px;
             float: left;
             padding: $base-spacing / 2;
             padding-bottom: 0;
-
         }
+
+            @include tablet {
+                div {
+                    float: none;
+                    margin: $center;
+                    padding: $base-spacing;
+                    width: 50%;
+                    border-style: none;
+                    border-bottom-style: ridge;
+                    text-align: center;
+                }
+
+                div:last-of-type {
+                    border-bottom-style: none;
+                }
+            }
     }
 
 @import '_projects';

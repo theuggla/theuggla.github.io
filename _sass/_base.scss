@@ -55,6 +55,10 @@ html, body {
     margin: $center;
     padding-bottom: $base-sizing;
     overflow: auto;
+
+    @include laptop {
+        max-width: 800px;
+    }
 }
 
 //headlines

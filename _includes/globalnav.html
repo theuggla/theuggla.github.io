@@ -2,10 +2,12 @@
     {% assign pages = site.pages | sort:"weight"  %}
     <ul>
     {% for p in pages %}
+    {% if p.menu == 'main' %}
     {% if page.url == p.url %}
         <li><a class="active" href="{{ "/{{p.url}}" | prepend: site.baseurl | prepend: site.url }}">{{p.title}}</a></li>
     {% else %}
         <li><a href="{{ "/{{p.url}}" | prepend: site.baseurl | prepend: site.url }}">{{p.title}}</a></li>
+    {% endif %}
     {% endif %}
     {% endfor %}
     </ul>

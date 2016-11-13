@@ -17,23 +17,29 @@ nav {
 
     ul {
         float: right;
-    }
 
-    a {
-        text-align: center;
-        margin-left: $base-spacing;
-        font-size: $big-font-size;
-    }
+        @include small-laptop {
+            text-align: center;
+            float: none;
+            display: block;
 
-    a.active {
-        border-bottom-style: solid;
-    }
-}
+            li:first-of-type {
+                padding-left: 0;
+            }
+        }
 
-.localnav {
-    float: right;
+        a {
+            text-align: center;
+            margin-left: $base-spacing;
+            font-size: $big-font-size;
 
-    li {
-        padding: $base-spacing / 2;
+            @include phone {
+                font-size: $base-font-size * 1.5;
+            }
+        }
+
+        a.active {
+            border-bottom-style: solid;
+        }
     }
 }

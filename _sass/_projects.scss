@@ -1,9 +1,12 @@
-
-.many {
+section.many {
     width: $content-width / 2;
     float: none;
     margin: $center;
     margin-top: $base-sizing;
+
+    @include tablet {
+        max-width: 100%;
+    }
 
     h2 {
         font-size: $base-font-size * 2.2;
@@ -47,12 +50,13 @@
 
         img {
             float: right;
+            max-width: 50%;
         }
     }
 
 }
 
-.few {
+section.few {
     @extend .many;
 
     width: $content-width / 3;
@@ -67,8 +71,46 @@
         }
     }
 
+    @include laptop {
+        width: $content-width / 2;
+        float: none;
+        margin: $center;
+        margin-top: $base-sizing;
+        clear: both;
+
+        ul {
+            border-right-style: none;
+
+            a {
+                text-align: left;
+            }
+
+        }
+    }
+
+    @include tablet {
+        max-width: 100%;
+    }
+
 }
 
-.few:last-of-type {
+section.few:last-of-type {
     border-right-style: none;
+
+    @include laptop {
+        border-bottom-style: none;
+    }
+}
+
+nav.few, nav.many{
+        li {
+            float: right;
+            padding: $base-spacing;
+        }
+}
+
+@media screen and (min-width: $small-laptop-width) {
+    nav.few {
+        display: none;
+    }
 }
