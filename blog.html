@@ -1,5 +1,6 @@
 ---
 title: blog
+layout: blog
 weight: 3
 ---
 
@@ -9,7 +10,7 @@ weight: 3
                 <h3>posts</h3>
                 {% for post in site.posts %}
                 <li>
-                    <a href="{{site.url}}{{page.url}}/#{{post.title | slugify}}">{{ post.title | downcase}}</a>
+                    <a href="#{{post.title | slugify}}">{{ post.title | downcase}}</a>
                 </li>
                 {% endfor %}
             </ul>
@@ -17,11 +18,12 @@ weight: 3
     <div id="posts">
         {% for post in site.posts %}
         <div id="post">
-            <a href="{{ post.url }}">
-                <p>{{ post.date | date_to_string }}</p>
+            <p class="date">{{ post.date | date_to_string }}</p>
+            <a href="{{post.url}}">
                 <h3 id="{{post.title | slugify}}">{{ post.title }}</h3>
             </a>
             {{ post.content }}
+            <a class="commentcount" href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{post.url}}"></a>
         </div>
         {% endfor %}
     </div>

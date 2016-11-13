@@ -10,11 +10,13 @@ $navigation: aqua_grotesqueregular, serif;
 $headlines: chaseregular, serif;
 $base-font-size:   1em;
 $big-font-size:  $base-font-size * 2;
+$small-font-size: $base-font-size * 0.8;
 
 //space related
 $center: 0 auto;
 $base-spacing: 1em;
 $base-sizing: 5em;
+$border-width: 0.3em;
 
 //background related
 $grey-color:       #828282;
@@ -29,43 +31,8 @@ $on-laptop:        800px;
 //import bases
 @import '_reset';
 @import '_base';
-
-
-//header styles
-header {
-    overflow: auto;
-    background-color: white;
-
-    .wrapper {
-        margin: $center;
-        padding: 0.5em 0;
-        max-width: $content-width;
-
-    }
-
-    h1 {
-        float: left;
-    }
-
-    a:active, a:hover {
-        border-style: none;
-    }
-
-    aside {
-        float: right;
-
-        li {
-            display: inline-block;
-            margin: 1.5em 0.2em 0;
-        }
-
-        img {
-            height: $big-font-size;
-            width: auto;
-        }
-
-    }
-}
+@import '_headandfoot';
+@import '_menu';
 
 //home styles
     #about {
@@ -76,7 +43,7 @@ header {
     #projects {
         float: right;
         width: 60%;
-        margin-top: 10em;
+        margin-top: $base-sizing * 2;
         text-align: right;
 
         h2 {
@@ -87,36 +54,15 @@ header {
 
         div {
             border-right-style: ridge;
-            border-width: 0.3em;
+            border-width: $border-width;
             width: 33%;
             float: left;
-            padding: 0.5em;
+            padding: $base-spacing / 2;
             padding-bottom: 0;
 
         }
     }
 
-//footer styles
-footer {
-    background-color: white;
-    width: 100%;
-    overflow: auto;
-    height: $base-sizing;
-    position:absolute;
-    bottom:0;
-    left:0;
-
-    a {
-        float: right;
-
-        img {
-            height: $base-sizing - 0.3em;
-            width: auto;
-        }
-    }
-}
-
-@import '_menu';
 @import '_projects';
 @import '_blog';
 

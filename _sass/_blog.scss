@@ -20,7 +20,7 @@
         }
 
         a {
-            font-size: $base-font-size * 0.8;
+            font-size: $small-font-size;
         }
 
         a:hover, a:active, a:focus {
@@ -34,17 +34,17 @@
         overflow: auto;
         margin-top: $base-sizing;
 
+        p.date {
+            float: right;
+            font-size: $small-font-size;
+        }
+
         a {
 
             h3 {
                 float: left;
                 margin-bottom: $base-spacing;
                 font-size: $base-font-size * 1.4;
-            }
-
-            p {
-                float: right;
-                font-size: $base-font-size * 0.8;
             }
         }
 
@@ -53,10 +53,18 @@
         }
 
         #post {
-            padding-bottom: $base-spacing * 1;
+            padding-bottom: $base-spacing;
             margin: $base-spacing * 2.5;
             border-bottom-style: ridge;
-            border-width: 0.3em;
+            border-width: $border-width;
+
+            .commentcount {
+                padding-top: $base-spacing;
+                display: block;
+                text-align: right;
+                font-size: $small-font-size;
+            }
+
         }
 
         #post:last-of-type {
@@ -66,12 +74,23 @@
         #post:first-of-type {
             margin-top: 0;
         }
+
+        img {
+            display: block;
+            margin: $center;
+            padding: $base-spacing 0;
+        }
     }
 }
 
 .post {
     width: 70%;
     margin: $center;
+    margin-top: $base-sizing;
+
+    h2 {
+        font-family: simplificasimplifica, serif;
+    }
 }
 
 .post-content {

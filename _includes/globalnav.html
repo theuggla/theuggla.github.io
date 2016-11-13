@@ -3,9 +3,9 @@
     <ul>
     {% for p in pages %}
     {% if page.url == p.url %}
-        <li><a class="active" href="{{site.baseurl}}{{p.url}}">{{p.title}}</a></li>
+        <li><a class="active" href="{{ "/{{p.url}}" | prepend: site.baseurl | prepend: site.url }}">{{p.title}}</a></li>
     {% else %}
-        <li><a href="{{site.baseurl}}{{p.url}}">{{p.title}}</a></li>
+        <li><a href="{{ "/{{p.url}}" | prepend: site.baseurl | prepend: site.url }}">{{p.title}}</a></li>
     {% endif %}
     {% endfor %}
     </ul>

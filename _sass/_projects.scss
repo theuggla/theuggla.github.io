@@ -20,7 +20,7 @@
             margin: $base-spacing;
             padding: $base-spacing / 2 0;
             border-bottom-style: ridge;
-            border-width: 0.3em;
+            border-width: $border-width;
 
             h3 {
                 margin-bottom: $base-spacing / 2;
@@ -46,7 +46,6 @@
         }
 
         img {
-            max-width: 100%;
             float: right;
         }
     }
@@ -61,7 +60,7 @@
 
     ul {
         border-right-style: ridge;
-        border-width: 0.3em;
+        border-width: $border-width;
 
         a {
             text-align: right;
