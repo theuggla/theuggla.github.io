@@ -4,8 +4,34 @@ layout: default
 
 {{content}}
 
+<div class="blog">
+    <nav class="localnav">
+        <ul>
+            <h3>posts</h3>
+            {% for post in site.posts %}
+            <li>
+                <a href="#{{post.title | slugify}}">{{ post.title | downcase}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </nav>
+    <div id="posts">
+        {% for post in site.posts %}
+        <div id="post">
+            <p class="date">{{ post.date | date_to_string }}</p>
+            <a href="{{post.url}}">
+                <h3 id="{{post.title | slugify}}">{{ post.title }}</h3>
+            </a>
+            {{ post.content }}
+            {% if site.disqus_shortname %}<a class="commentcount" href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{post.url}}">comment this</a>{% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% if site.disqus_shortname %}
 <script type="text/javascript">
-    var disqus_shortname = 'mollyarhammar';
+    var disqus_shortname = '{{site.disqus_shortname}}';
 
     (function () {
         var s = document.createElement('script'); s.async = true;
@@ -14,3 +40,4 @@ layout: default
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>
+{% endif %}

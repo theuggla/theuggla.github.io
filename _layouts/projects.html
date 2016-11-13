@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+{{content}}
+
+{% for collection in site.collections | where: "collection.label","projects" %}
+
+{% if collection.categories.size > 3 %}
+{% assign projects = "many" %}
+{% else %}
+{% assign projects = "few" %}
+{% endif %}
+
+<nav class="{{projects}}">
+    <ul>
+        {% for category in collection.categories %}
+        <li>
+            <a href="#{{category}}">{{category}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
+
+{% for category in collection.categories %}
+<section class="{{projects}}">
+    <h2 id="{{category}}">{{category}}</h2>
+    <ul>
+        {% for project in site.projects %}
+        {% if project.category == category %}
+        <li>
+            <h3>{{ project.title | escape }}</h3>
+            {{project.content}}
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</section>
+{% endfor %}
+{% endfor %}
+

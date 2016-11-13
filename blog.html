@@ -4,28 +4,3 @@ layout: blog
 weight: 3
 menu: main
 ---
-
-<div class="blog">
-        <nav class="localnav">
-            <ul>
-                <h3>posts</h3>
-                {% for post in site.posts %}
-                <li>
-                    <a href="#{{post.title | slugify}}">{{ post.title | downcase}}</a>
-                </li>
-                {% endfor %}
-            </ul>
-        </nav>
-    <div id="posts">
-        {% for post in site.posts %}
-        <div id="post">
-            <p class="date">{{ post.date | date_to_string }}</p>
-            <a href="{{post.url}}">
-                <h3 id="{{post.title | slugify}}">{{ post.title }}</h3>
-            </a>
-            {{ post.content }}
-            <a class="commentcount" href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{post.url}}">comment this</a>
-        </div>
-        {% endfor %}
-    </div>
-</div>
