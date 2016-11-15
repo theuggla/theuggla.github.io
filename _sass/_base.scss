@@ -35,6 +35,60 @@
 
 }
 
+//variables
+
+//font related
+$base-font-family: Calibri, Helvetica, Arial, sans-serif;
+$navigation: aqua_grotesqueregular, serif;
+$headlines: chaseregular, serif;
+$base-font-size:   1em;
+$big-font-size:  $base-font-size * 2;
+$small-font-size: $base-font-size * 0.8;
+
+//space related
+$center: 0 auto;
+$base-spacing: 1em;
+$base-sizing: 5em;
+$border-width: 0.3em;
+
+//background related
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+
+// Width of the content area
+$content-width:    1000px;
+$tablet-width:          600px;
+$small-laptop-width:        1100px;
+$phone-width: 404px;
+
+
+//mixins
+@mixin laptop {
+    @media screen and (max-width: $small-laptop-width) {
+        @content;
+    }
+}
+
+@mixin small-laptop {
+    @media screen and (max-width: 845px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: $tablet-width) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: $phone-width) {
+        @content;
+    }
+}
+
+@import '_reset';
+
 //main stuff
 html, body {
     height: 100%;
@@ -55,10 +109,6 @@ html, body {
     margin: $center;
     padding-bottom: $base-sizing;
     overflow: auto;
-
-    @include laptop {
-        max-width: 800px;
-    }
 }
 
 //headlines
@@ -95,4 +145,8 @@ a:focus, a:hover, a:active {
 
 img {
     max-width: 100%;
+    height: auto;
 }
+
+@import '_headandfoot';
+@import '_menu';

@@ -1,6 +1,14 @@
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title> {% if page.title and page.title != 'home' %}{{page.title}} - {{site.title}}{% else %}{{site.title}}{% endif %}</title>
-    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl | prepend: site.url }}" />
+    <link rel="alternate" type="application/rss+xml" title="{{site.title}}" href="{{ "/rss.xml" | prepend: site.baseurl | prepend: site.url }}" />
+    <meta property="og:title" content="{{site.title}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{site.url}}{{site.baseurl}}" />
+    <meta property="og:image" content="{{ "/assets/share.png" | prepend: site.baseurl | prepend: site.url }}" />
+    <meta property="og:description" content="{{site.description}}" />
+    <meta property="og:determiner" content="the" />
+    <meta property="og:locale" content="en_GB" />
 </head>

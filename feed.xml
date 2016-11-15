@@ -1,0 +1,20 @@
+---
+layout: null
+menu: no
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>{{site.title}}</title>
+        <description>my latest projects</description>
+        <link>{{ site.url }}{{site.baseurl}}</link>
+        {% for project in site.projects %}
+        <item>
+            <title>{{ project.title | xml_escape }}</title>
+            <description>{{ project.excerpt | xml_escape }}</description>
+            <link>{{ project.url | prepend: site.url | prepend: site.baseurl}}</link>
+            <guid isPermaLink="true">{{ project.url | prepend: site.url | prepend: site.baseurl}}</guid>
+        </item>
+        {% endfor %}
+    </channel>
+</rss>

@@ -22,6 +22,7 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 author: Molly Arhammar
+rss: true
 
 #usernames
 disqus_shortname: mollyarhammar
@@ -55,6 +56,5 @@ defaults:
         type: "posts"
      values:
         layout: "post"
-        excerpt_separator: <more>
 
 

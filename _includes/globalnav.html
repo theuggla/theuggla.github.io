@@ -1,13 +1,11 @@
 <nav class="globalnav">
-    {% assign pages = site.pages | sort:"weight"  %}
+    {% assign menu = site.pages | where: "menu", "main" | sort: "weight" %}
     <ul>
-    {% for p in pages %}
-    {% if p.menu == 'main' %}
+    {% for p in menu %}
     {% if page.url == p.url %}
         <li><a class="active" href="{{ "/{{p.url}}" | prepend: site.baseurl | prepend: site.url }}">{{p.title}}</a></li>
     {% else %}
         <li><a href="{{ "/{{p.url}}" | prepend: site.baseurl | prepend: site.url }}">{{p.title}}</a></li>
-    {% endif %}
     {% endif %}
     {% endfor %}
     </ul>

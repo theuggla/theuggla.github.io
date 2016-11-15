@@ -18,24 +18,10 @@ nav {
     ul {
         float: right;
 
-        @include small-laptop {
-            text-align: center;
-            float: none;
-            display: block;
-
-            li:first-of-type {
-                padding-left: 0;
-            }
-        }
-
         a {
             text-align: center;
             margin-left: $base-spacing;
             font-size: $big-font-size;
-
-            @include phone {
-                font-size: $base-font-size * 1.5;
-            }
         }
 
         a.active {

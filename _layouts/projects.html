@@ -2,14 +2,16 @@
 layout: default
 ---
 
-{{content}}
-
 {% for collection in site.collections | where: "collection.label","projects" %}
 
-{% if collection.categories.size > 3 %}
-{% assign projects = "many" %}
+{% if collection.categories.size == 1 %}
+{% assign projects = "one" %}
+{% elsif collection.categories.size == 2 %}
+{% assign projects = "two" %}
+{% elsif collection.categories.size == 3 %}
+{% assign projects = "three" %}
 {% else %}
-{% assign projects = "few" %}
+{% assign projects = "many" %}
 {% endif %}
 
 <nav class="{{projects}}">
@@ -22,12 +24,15 @@ layout: default
     </ul>
 </nav>
 
+{{content}}
+
+<div class="projects-content">
 {% for category in collection.categories %}
 <section class="{{projects}}">
     <h2 id="{{category}}">{{category}}</h2>
     <ul>
         {% for project in site.projects %}
-        {% if project.category == category %}
+        {% if project.category contains category %}
         <li>
             <h3>{{ project.title | escape }}</h3>
             {{project.content}}
@@ -38,4 +43,4 @@ layout: default
 </section>
 {% endfor %}
 {% endfor %}
-
+</div>

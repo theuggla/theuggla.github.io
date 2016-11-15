@@ -43,6 +43,9 @@
                     <a href="mailto:{{site.email}}"><img src="{{ "/assets/email_icon.png" | prepend: site.baseurl | prepend: site.url }}" alt="email" title="{{site.email}}" /></a>
                 </li>
             {% endif %}
+            {% if site.rss %}
+                <a href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}"><img src="{{ "/assets/rss_icon.png" | prepend: site.baseurl | prepend: site.url }}" alt="rss feed"/>
+            {% endif %}
             </ul>
         </aside>
     </div>
