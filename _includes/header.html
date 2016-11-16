@@ -5,46 +5,48 @@
             <ul>
             {% if site.github_username %}
                 <li>
-                    <a href="https://github.com/{{site.github_username}}"><img src="{{ "/assets/github_icon.png" | prepend: site.baseurl | prepend: site.url }}" alt="github"/></a>
+                    <a href="https://github.com/{{site.github_username}}"><img src="{{ "/assets/icons/github_icon.png" | prepend: site.baseurl | prepend: site.url }}" alt="github"/></a>
                 </li>
             {% endif %}
             {% if site.tumblr_username %}
                 <li>
-                    <a href="https://{{site.tumblr_username}}.tumblr.com/"><img src="{{ "/assets/tumblr_icon.png" | prepend: site.baseurl | prepend: site.url }}" alt="tumblr"/></a>
+                    <a href="https://{{site.tumblr_username}}.tumblr.com/"><img src="{{ "/assets/icons/tumblr_icon.png" | prepend: site.baseurl | prepend: site.url }}" alt="tumblr"/></a>
                 </li>
             {% endif %}
             {% if site.facebook_username %}
                 <li>
-                    <a href="https://facebook.com/{{site.facebook_username}}"><img src="{{ "/assets/facebook_icon.png" | prepend: site.baseurl | prepend: site.url }}" alt="facebook"/></a>
+                    <a href="https://facebook.com/{{site.facebook_username}}"><img src="{{ "/assets/icons/facebook_icon.png" | prepend: site.baseurl | prepend: site.url }}" alt="facebook"/></a>
                 </li>
             {% endif %}
             {% if site.pinterest_username %}
                 <li>
-                    <a href="https://pinterest.com/{{site.pinterest_username}}"><img src="{{ "/assets/pinterest_icon.png" | prepend: site.baseurl | prepend: site.url }}" alt="pinterest"/></a>
+                    <a href="https://pinterest.com/{{site.pinterest_username}}"><img src="{{ "/assets/icons/pinterest_icon.png" | prepend: site.baseurl | prepend: site.url }}" alt="pinterest"/></a>
                 </li>
             {% endif %}
             {% if site.youtube_username %}
                 <li>
-                    <a href="https://youtube.com/{{site.youtube_username}}"><img src="{{ "/assets/youtube_icon.png" | prepend: site.baseurl | prepend: site.url }}" alt="youtube"/></a>
+                    <a href="https://youtube.com/{{site.youtube_username}}"><img src="{{ "/assets/icons/youtube_icon.png" | prepend: site.baseurl | prepend: site.url }}" alt="youtube"/></a>
                 </li>
             {% endif %}
             {% if site.instagram_username %}
                 <li>
-                    <a href="https://instagram.com/{{site.instagram_username}}"><img src="{{ "/assets/instagram_icon.png" | prepend: site.baseurl | prepend: site.url }}" alt="instagram"/></a>
+                    <a href="https://instagram.com/{{site.instagram_username}}"><img src="{{ "/assets/icons/instagram_icon.png" | prepend: site.baseurl | prepend: site.url }}" alt="instagram"/></a>
                 </li>
             {% endif %}
             {% if site.twitter_username %}
                 <li>
-                   <a href="https://twitter.com/{{site.twitter_username}}"><img src="{{ "/assets/twitter_icon.png" | prepend: site.baseurl | prepend: site.url }}" alt="twitter"/></a>
+                   <a href="https://twitter.com/{{site.twitter_username}}"><img src="{{ "/assets/icons/twitter_icon.png" | prepend: site.baseurl | prepend: site.url }}" alt="twitter"/></a>
                 </li>
             {% endif %}
             {% if site.email %}
                 <li>
-                    <a href="mailto:{{site.email}}"><img src="{{ "/assets/email_icon.png" | prepend: site.baseurl | prepend: site.url }}" alt="email" title="{{site.email}}" /></a>
+                    <a href="mailto:{{site.email}}"><img src="{{ "/assets/icons/email_icon.png" | prepend: site.baseurl | prepend: site.url }}" alt="email" title="{{site.email}}" /></a>
                 </li>
             {% endif %}
             {% if site.rss %}
-                <a href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}"><img src="{{ "/assets/rss_icon.png" | prepend: site.baseurl | prepend: site.url }}" alt="rss feed"/>
+                <li>
+                    <a href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}"><img src="{{ "/assets/icons/rss_icon.png" | prepend: site.baseurl | prepend: site.url }}" alt="rss feed"/></a>
+                </li>
             {% endif %}
             </ul>
         </aside>

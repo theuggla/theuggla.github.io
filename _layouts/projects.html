@@ -2,21 +2,23 @@
 layout: default
 ---
 
-{% for collection in site.collections | where: "collection.label","projects" %}
+{% assign count = site.collections.projects.categories.size %}
 
-{% if collection.categories.size == 1 %}
+{% if count == 1 %}
 {% assign projects = "one" %}
-{% elsif collection.categories.size == 2 %}
+{% elsif count == 2 %}
 {% assign projects = "two" %}
-{% elsif collection.categories.size == 3 %}
+{% elsif count == 3 %}
 {% assign projects = "three" %}
 {% else %}
 {% assign projects = "many" %}
 {% endif %}
 
+
+
 <nav class="{{projects}}">
     <ul>
-        {% for category in collection.categories %}
+        {% for category in site.collections.projects.categories %}
         <li>
             <a href="#{{category}}">{{category}}</a>
         </li>
@@ -27,20 +29,20 @@ layout: default
 {{content}}
 
 <div class="projects-content">
-{% for category in collection.categories %}
-<section class="{{projects}}">
-    <h2 id="{{category}}">{{category}}</h2>
-    <ul>
-        {% for project in site.projects %}
-        {% if project.category contains category %}
-        <li>
-            <h3>{{ project.title | escape }}</h3>
-            {{project.content}}
-        </li>
-        {% endif %}
-        {% endfor %}
-    </ul>
-</section>
-{% endfor %}
-{% endfor %}
+    {% for category in site.collections.projects.categories %}
+    <section class="{{projects}}">
+        <h2 id="{{category}}">{{category}}</h2>
+        <ul>
+            {% for project in site.projects %}
+            {% if project.category contains category %}
+            <li>
+                <h3>{{ project.title | escape }}</h3>
+                <p>[{{project.tags}}]</p>
+                <p>{{project.content}}</p>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </section>
+    {% endfor %}
 </div>

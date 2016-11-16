@@ -19,6 +19,7 @@
 
             li {
                 display: block;
+                text-align: justify;
                 margin: $base-spacing;
                 padding: $base-spacing / 2 0;
                 border-bottom-style: ridge;
@@ -32,8 +33,14 @@
                 a {
                     display: block;
                     font-weight: bold;
-                    text-align: left;
+                    text-align: right;
                     padding-top: $base-spacing;
+                }
+
+                p:first-of-type {
+                    text-align: right;
+                    font-size: $small-font-size;
+                    font-style: italic;
                 }
 
                 a:hover, a:active, a:focus {
@@ -49,11 +56,13 @@
             }
 
             img {
-                float: right;
+                display: block;
+                margin: $center;
                 max-width: 12em;
                 height: auto;
                 padding: $base-spacing;
             }
+
         }
 
     }
