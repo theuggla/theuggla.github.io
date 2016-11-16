@@ -7,7 +7,6 @@ layout: default
 
 {% assign collectionName = 'projects' %}
 {% assign c = site.collections | where:'label', collectionName | first %}
-{% for category in c.categories limit:3 %}
 <nav class="{{projects}}">
     <ul>
         {% for category in c.categories %}
