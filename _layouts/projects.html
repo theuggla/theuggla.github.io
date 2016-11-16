@@ -2,22 +2,12 @@
 layout: default
 ---
 
+{% assign projects = three % }
+
+
 {% assign collectionName = 'projects' %}
 {% assign c = site.collections | where:'label', collectionName | first %}
-{% assign count = c.categories.size %}
-
-{% if count == 1 %}
-{% assign projects = "one" %}
-{% elsif count == 2 %}
-{% assign projects = "two" %}
-{% elsif count == 3 %}
-{% assign projects = "three" %}
-{% else %}
-{% assign projects = "many" %}
-{% endif %}
-
-
-
+{% for category in c.categories limit:3 %}
 <nav class="{{projects}}">
     <ul>
         {% for category in c.categories %}
