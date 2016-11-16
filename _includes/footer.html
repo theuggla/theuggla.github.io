@@ -3,3 +3,16 @@
         <a href="https://github.com/theuggla/lysande-jekyll-theme"><img src="{{ "/assets/icons/theme_icon.png" | prepend: site.baseurl | prepend: site.url }}" alt="Theme: lysande" /></a>
     </div>
 </footer>
+
+{% if site.disqus_shortname %}
+<script type="text/javascript">
+    var disqus_shortname = '{{site.disqus_shortname}}';
+
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
+    }());
+</script>
+{% endif %}

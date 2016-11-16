@@ -42,7 +42,6 @@
         a {
 
             h3 {
-                float: left;
                 margin-bottom: $base-spacing;
                 font-size: $base-font-size * 1.4;
             }
@@ -80,6 +79,10 @@
             margin: $center;
             padding: $base-spacing 0;
         }
+
+        h2, h3, h4, h5 {
+            margin: $base-spacing, 0;
+        }
     }
 }
 
@@ -90,6 +93,10 @@
 
     h2 {
         font-family: simplificasimplifica, serif;
+    }
+
+    h2, h3, h4, h5 {
+        margin: $base-spacing, 0;
     }
 }
 
