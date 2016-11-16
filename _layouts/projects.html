@@ -20,7 +20,7 @@ layout: default
 
 <nav class="{{projects}}">
     <ul>
-        {% for category in site.collections.projects.categories %}
+        {% for category in c.categories %}
         <li>
             <a href="#{{category}}">{{category}}</a>
         </li>
@@ -31,7 +31,7 @@ layout: default
 {{content}}
 
 <div class="projects-content">
-    {% for category in site.collections.projects.categories %}
+    {% for category in c.categories %}
     <section class="{{projects}}">
         <h2 id="{{category}}">{{category}}</h2>
         <ul>
