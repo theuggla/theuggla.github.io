@@ -9,9 +9,9 @@ comments: true
 
 I think pre compiling CSS is absolutely lovely. it allows you to use variables! that's the
 absolutely most delightful feature. compared to regular CSS it allows you to spend your
-time in a much more productive way that endlessly scrolling through your code looking for
-all the instances of that one color you foolishly decided to use once before you
-realized it's horribly mustard-like. it's also much more readable, maintainable, and
+time in a much more productive way than endlessly scrolling through your code looking for
+all the instances of that one colour you foolishly decided to use once before you
+realised it's horribly mustard-like. it's also much more readable, maintainable, and
 easier to collaborate around.
 
 for this site I mainly used the variables, math and the nesting functions - the variables because they makes for both
@@ -36,24 +36,24 @@ static site generators are a very accessible way to make nice looking, fast web 
 strain. the downside is, of course, that they take a bit of time to learn how to use, and that the content can
 not be dynamically updated. this is only a downside if you really need to have your content dynamically
 updated of course, and a lot of the time you don't. another downside can be the fact that there is no content
-management system avaliable for updating content, so that you have to learn how to interact with the site directly.
+management system available for updating content, so that you have to learn how to interact with the site directly.
 on the other hand you have much more control over the site when you are not filtered through a CMS, so if you
-just put in the extra effort to begin with, you can easily cosomize the site the way you want to.
+just put in the extra effort to begin with, you can easily customize the site the way you want to.
 
 other downsides are the lack of an admin UI, which makes you in most cases required to sit in front of
 your computer with the software installed to update your site, and the lack of possible user input.
 
 on the other hand, the site becomes very secure - there is no way to hack into it when no requests
-are being made and no traffic is going back and forth between anywhere. the documents just sist there
+are being made and no traffic is going back and forth between anywhere. the documents just sit there
 flatly on the server. this also makes the site very quick, and the lack of server request makes it
 able to respond vary quickly to a huge number of requested page views without risk of breaking.
 
-All this makes them ideal for presenting content that you won't need to
+all this makes them ideal for presenting content that you won't need to
 update on the fly - if you just need to present, there is no need
 for interaction with the user. if you are presenting something it is also good that you can
 handle a huge number of requests - if a lot of people wants to look at what you are presenting at once,
 you don't want the site to break. for presenting a project, a portfolio or a small company that
-just wants to tell visitors where they are and what they're abput, static site generators are ideal.
+just wants to tell visitors where they are and what they're about, static site generators are ideal.
 
 ### robots.txt
 
@@ -66,7 +66,7 @@ not give results from the assets folder, where I keep all the icons and thumbnai
 do badly in a google image search, and the blog page, since it would just drop the poor reader on the
 page that contains what they were searching for without any indication of where on the page it is. a
 terrible thing, since all of my posts are on the same page. instead the robot kan go directly to the post,
-or wherever else on the site they'de like to be.
+or wherever else on the site they'd like to be.
 
 ### humans.txt
 

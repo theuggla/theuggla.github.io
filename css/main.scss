@@ -10,6 +10,7 @@
     #about {
         width: 30%;
         float: left;
+        padding-bottom: $base-spacing;
 
         @include small-laptop {
             width: 80%;
@@ -70,7 +71,12 @@
                 div:last-of-type {
                     border-bottom-style: none;
                 }
+
+                img {
+                    max-width: 2em;
+                }
             }
+
     }
 
 @import '_projects';

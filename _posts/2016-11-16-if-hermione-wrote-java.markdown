@@ -14,6 +14,6 @@ interacting and logic at the same time. to invent a language to speak to the com
 speaking. to write a history about something happening while making it happen. basically it's magic.
 
 when I was little I wanted to invent stuff. then I wanted to be a chimney sweeper.
-then I wanted to be a writer. then I wanted to be a matematician. then I wanted to be hermione granger,
+then I wanted to be a writer. then I wanted to be a mathematician. then I wanted to be hermione granger,
 and finally I thought that what is most important in life is communication and people understanding each other.
 to do programming is being all of those things at once. except the chimney sweeper.
