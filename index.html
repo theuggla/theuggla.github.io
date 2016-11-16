@@ -19,7 +19,9 @@ menu: main
 </section>
 
 <section id="projects">
-    {% for category in site.collections.projects.categories limit:3 %}
+    {% assign collectionName = 'projects' %}
+    {% assign c = site.collections | where:'label', collectionName | first %}
+    {% for category in c.categories limit:3 %}
     <div id="{{category}}">
         <img src="/assets/{{category}}.png" />
         <h2>{{category}}</h2>

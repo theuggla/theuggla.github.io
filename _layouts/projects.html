@@ -2,7 +2,9 @@
 layout: default
 ---
 
-{% assign count = site.collections.projects.categories.size %}
+{% assign collectionName = 'projects' %}
+{% assign c = site.collections | where:'label', collectionName | first %}
+{% assign count = c.categories.size %}
 
 {% if count == 1 %}
 {% assign projects = "one" %}
