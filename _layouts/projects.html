@@ -2,11 +2,13 @@
 layout: default
 ---
 
-{% assign projects = three % }
-
-
 {% assign collectionName = 'projects' %}
 {% assign c = site.collections | where:'label', collectionName | first %}
+{% for category in c.categories limit:3 %}
+    <h2>{{category}}</h2>
+{% endfor %}
+
+
 <nav class="{{projects}}">
     <ul>
         {% for category in c.categories %}
