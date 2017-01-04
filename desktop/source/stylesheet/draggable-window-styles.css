@@ -10,7 +10,7 @@
     background-color: rgba(156, 141, 127, 0.56);
     border: solid black 5px;
     border-radius: 1em;
-    border-image: url("/image/draggable-window-border.png") 10 8;
+    border-image: url("desktop/source/image/draggable-window-border.png") 10 8;
     display: flex;
     flex-direction: column;
     overflow: hidden;

@@ -1,7 +1,7 @@
 /*fonts*/
 @font-face {
     font-family: 'veteran_typewriterregular';
-    src: url("/image/veteran_typewriter-webfont.woff") format('woff');
+    src: url("desktop/source/image/veteran_typewriter-webfont.woff") format('woff');
     font-weight: normal;
     font-style: normal;
 

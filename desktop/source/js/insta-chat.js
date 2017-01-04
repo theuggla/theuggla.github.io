@@ -24,7 +24,7 @@ class InstaChat extends HTMLElement {
 
         //set config object as this.config
         this.config = {
-            url: config.url || 'ws:vhost3.lnu.se:20080/socket/',
+            url: config.url || 'wss:vhost3.lnu.se:20080/socket/',
             name: config.name || 'severus snape',
             channel: config.channel || '',
             key: config.key || 'eDBE76deU7L0H9mEBgxUKVR0VCnq0XBd'
