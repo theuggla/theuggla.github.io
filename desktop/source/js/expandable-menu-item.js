@@ -12,7 +12,7 @@ class ExpandableMenuItem extends HTMLElement {
      */
     constructor() {
         super();
-        let menuTemplate = document.querySelector('link[href="expandable-menu-item.html"]').import.querySelector("#menuItemTemplate"); //shadow DOM import
+        let menuTemplate = document.querySelector('link[href="/desktop/source/expandable-menu-item.html"]').import.querySelector("#menuItemTemplate"); //shadow DOM import
 
         //set up shadow dom styles
         let shadowRoot = this.attachShadow({mode: "open"});

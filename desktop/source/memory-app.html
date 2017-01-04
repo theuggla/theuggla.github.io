@@ -1,12 +1,12 @@
 <!-- a web component import for a memory game app-->
-<link rel="import" href="expandable-menu-item.html" />
-<link rel="import" href="draggable-window.html" />
-<link rel="import" href="memory-game.html">
+<link rel="import" href="/desktop/source/expandable-menu-item.html" />
+<link rel="import" href="/desktop/source/draggable-window.html" />
+<link rel="import" href="/desktop/source/memory-game.html">
 
 <template id="memoryWindowTemplate">
-    <style>@import '_css/memory-app-styles.css';</style>
+    <style>@import '/desktop/source/_css/memory-app-styles.css';</style>
     <draggable-window>
-        <img slot="icon" src="image/memory-icon.png" />
+        <img slot="icon" src="/desktop/source/image/memory-icon.png" />
         <p slot="title">memory</p>
         <expandable-menu-item slot="menubaritem" label="game" column>
             <a slot="menuitem">game</a>
@@ -51,4 +51,4 @@
     </ul>
 </template>
 
-<script src='js/memory-app.js'></script>
+<script src='/desktop/source/js/memory-app.js'></script>

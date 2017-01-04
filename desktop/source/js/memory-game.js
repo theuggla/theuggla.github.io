@@ -17,7 +17,7 @@ class MemoryGame extends HTMLElement {
      */
     constructor(width, height) {
         super();
-        let memoryTemplate = document.querySelector('link[href="memory-app.html"]').import.querySelector('link[href="memory-game.html"]').import.querySelector("#memoryTemplate"); //shadow DOM import
+        let memoryTemplate = document.querySelector('link[href="/desktop/source/memory-app.html"]').import.querySelector('link[href="/desktop/source/memory-game.html"]').import.querySelector("#memoryTemplate"); //shadow DOM import
 
         //setup shadow dom styles
         let shadowRoot = this.attachShadow({mode: "open"});
@@ -97,7 +97,7 @@ class MemoryGame extends HTMLElement {
      * Adds the bricks to the board and renders them in the DOM.
      */
     draw() {
-        let brickTemplate = document.querySelector('link[href="memory-app.html"]').import.querySelector('link[href="memory-game.html"]').import.querySelector("#brickTemplate"); //brick template
+        let brickTemplate = document.querySelector('link[href="/desktop/source/memory-app.html"]').import.querySelector('link[href="/desktop/source/memory-game.html"]').import.querySelector("#brickTemplate"); //brick template
 
         let brick;
         let match;

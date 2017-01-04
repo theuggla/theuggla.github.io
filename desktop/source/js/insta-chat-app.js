@@ -13,7 +13,7 @@ class InstaChatApp extends HTMLElement {
      */
     constructor() {
         super();
-        let chatWindowTemplate = document.querySelector('link[href="insta-chat-app.html"]').import.querySelector("#chatWindowTemplate"); //shadow DOM import
+        let chatWindowTemplate = document.querySelector('link[href="/desktop/source/insta-chat-app.html"]').import.querySelector("#chatWindowTemplate"); //shadow DOM import
 
         let shadowRoot = this.attachShadow({mode: "open"});
         let instance = chatWindowTemplate.content.cloneNode(true);

@@ -1,12 +1,12 @@
 <!-- a web component import for an insta chat app-->
-<link rel="import" href="expandable-menu-item.html" />
-<link rel="import" href="draggable-window.html" />
-<link rel="import" href="insta-chat.html">
+<link rel="import" href="/desktop/source/expandable-menu-item.html" />
+<link rel="import" href="/desktop/source/draggable-window.html" />
+<link rel="import" href="/desktop/source/insta-chat.html">
 
 <template id="chatWindowTemplate">
     <style>@import '_css/insta-chat-app-styles.css';</style>
     <draggable-window>
-        <img slot="icon" src="/image/chat-icon.png" />
+        <img slot="icon" src="/desktop/source/image/chat-icon.png" />
         <p slot="title">chat</p>
         <expandable-menu-item slot="menubaritem" label="options" column>
         <a slot="menuitem">options</a>
@@ -35,4 +35,4 @@
     </draggable-window>
 </template>
 
-<script src='js/insta-chat-app.js'></script>
+<script src='/desktop/source/js/insta-chat-app.js'></script>

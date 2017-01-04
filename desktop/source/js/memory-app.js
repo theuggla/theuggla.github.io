@@ -13,7 +13,7 @@ class MemoryApp extends HTMLElement {
      */
     constructor() {
         super();
-        let memoryWindowTemplate = document.querySelector('link[href="memory-app.html"]').import.querySelector("#memoryWindowTemplate");
+        let memoryWindowTemplate = document.querySelector('link[href="/desktop/source/memory-app.html"]').import.querySelector("#memoryWindowTemplate");
 
         let shadowRoot = this.attachShadow({mode: "open"});
         let instance = memoryWindowTemplate.content.cloneNode(true);
@@ -136,7 +136,7 @@ class MemoryApp extends HTMLElement {
      * @param result
      */
     updateHighscores(result) {
-        let highscoresTemplate = document.querySelector('link[href="memory-app.html"]').import.querySelector("#highscoresTemplate");
+        let highscoresTemplate = document.querySelector('link[href="/desktop/source/memory-app.html"]').import.querySelector("#highscoresTemplate");
 
         let highscores = {
             storage: localStorage,

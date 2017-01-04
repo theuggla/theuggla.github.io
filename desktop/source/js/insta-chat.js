@@ -15,7 +15,7 @@ class InstaChat extends HTMLElement {
      */
     constructor(config = {}, startMessages) {
         super();
-        let chatTemplate = document.querySelector('link[href="insta-chat-app.html"]').import.querySelector('link[href="insta-chat.html"]').import.querySelector("#chatTemplate"); //shadow DOM import
+        let chatTemplate = document.querySelector('link[href="/desktop/source/insta-chat-app.html"]').import.querySelector('link[href="/desktop/source/insta-chat.html"]').import.querySelector("#chatTemplate"); //shadow DOM import
 
         //setup shadow dom styles
         let shadowRoot = this.attachShadow({mode: "open"});
@@ -147,7 +147,7 @@ class InstaChat extends HTMLElement {
      * @param unsent {boolean} true if the message has not been successfully sent
      */
     print(message, unsent) {
-        let messageTemplate = document.querySelector('link[href="insta-chat-app.html"]').import.querySelector('link[href="insta-chat.html"]').import.querySelector("#messageTemplate"); //message display template
+        let messageTemplate = document.querySelector('link[href="/desktop/source/insta-chat-app.html"]').import.querySelector('link[href="/desktop/source/insta-chat.html"]').import.querySelector("#messageTemplate"); //message display template
 
         let chatWindow = this.shadowRoot.querySelector('#messageWindow');
         let messageDiv = document.importNode(messageTemplate.content.firstElementChild, true);
