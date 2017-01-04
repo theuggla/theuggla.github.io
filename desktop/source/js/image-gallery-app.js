@@ -13,7 +13,7 @@ class ImageGalleryApp extends HTMLElement {
      */
     constructor() {
         super();
-        let galleryWindowTemplate = document.querySelector('link[href="/image-gallery-app.html"]').import.querySelector("#galleryWindowTemplate"); //shadow DOM import
+        let galleryWindowTemplate = document.querySelector('link[href="image-gallery-app.html"]').import.querySelector("#galleryWindowTemplate"); //shadow DOM import
 
 
         let shadowRoot = this.attachShadow({mode: "open"});
@@ -90,7 +90,7 @@ class ImageGalleryApp extends HTMLElement {
     }
 
     updateImages() {
-        let imgTemplate = document.querySelector('link[href="/image-gallery-app.html"]').import.querySelector("#imgTemplate"); //shadow DOM import
+        let imgTemplate = document.querySelector('link[href="image-gallery-app.html"]').import.querySelector("#imgTemplate"); //shadow DOM import
         let imageGallery = this.shadowRoot.querySelector('image-gallery');
 
         this.images = this.images.concat(Array.prototype.slice.call(this.getImages()));

@@ -73,5 +73,3 @@ class Timer {
         return this.displayInterval;
     }
 }
-
-module.exports = Timer;

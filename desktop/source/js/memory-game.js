@@ -8,7 +8,7 @@
  */
 
 //requires
-let Timer = require('./timer.js');
+import * as Timer from 'timer';
 
 
 class MemoryGame extends HTMLElement {
@@ -17,7 +17,7 @@ class MemoryGame extends HTMLElement {
      */
     constructor(width, height) {
         super();
-        let memoryTemplate = document.querySelector('link[href="/memory-app.html"]').import.querySelector('link[href="/memory-game.html"]').import.querySelector("#memoryTemplate"); //shadow DOM import
+        let memoryTemplate = document.querySelector('link[href="memory-app.html"]').import.querySelector('link[href="memory-game.html"]').import.querySelector("#memoryTemplate"); //shadow DOM import
 
         //setup shadow dom styles
         let shadowRoot = this.attachShadow({mode: "open"});
@@ -97,7 +97,7 @@ class MemoryGame extends HTMLElement {
      * Adds the bricks to the board and renders them in the DOM.
      */
     draw() {
-        let brickTemplate = document.querySelector('link[href="/memory-app.html"]').import.querySelector('link[href="/memory-game.html"]').import.querySelector("#brickTemplate"); //brick template
+        let brickTemplate = document.querySelector('link[href="memory-app.html"]').import.querySelector('link[href="memory-game.html"]').import.querySelector("#brickTemplate"); //brick template
 
         let brick;
         let match;
@@ -127,7 +127,7 @@ class MemoryGame extends HTMLElement {
             let brickDiv = document.importNode(brickTemplate.content, true);
             let img = brickDiv.querySelector("img");
             let brick = theSet[i];
-            img.src = '/image/memory-brick-' + brick.draw() + '.png';
+            img.src = 'image/memory-brick-' + brick.draw() + '.png';
             img.setAttribute("brickNumber", i);
             this.appendChild(brickDiv);
 
@@ -194,7 +194,7 @@ class MemoryGame extends HTMLElement {
             if (img) {
                 let brickNumber = img.getAttribute("brickNumber");
                 if (this.set[brickNumber].draw() !== 0) { //turn the brick over if it's not turned
-                    img.src = '/image/memory-brick-' + this.set[brickNumber].turn() + '.png';
+                    img.src = 'image/memory-brick-' + this.set[brickNumber].turn() + '.png';
                 }
             }
         });
@@ -318,8 +318,8 @@ function playGame(set, game) {
                         }
                     } else { //bricks are not the same
                         setTimeout(() => {
-                            img1.src = '/image/' + choice1.turn() + '.png';
-                            img2.src = '/image/' + choice2.turn() + '.png';
+                            img1.src = 'image/' + choice1.turn() + '.png';
+                            img2.src = 'image/' + choice2.turn() + '.png';
                             choice1 = "";
                             choice2 = "";
                             img1 = "";

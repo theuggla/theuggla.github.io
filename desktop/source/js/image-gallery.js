@@ -12,7 +12,7 @@ class ImageGallery extends HTMLElement {
      */
     constructor() {
         super();
-        let galleryTemplate = document.querySelector('link[href="/image-gallery-app.html"]').import.querySelector('link[href="/image-gallery.html"]').import.querySelector("#galleryTemplate"); //shadow DOM import
+        let galleryTemplate = document.querySelector('link[href="image-gallery-app.html"]').import.querySelector('link[href="image-gallery.html"]').import.querySelector("#galleryTemplate"); //shadow DOM import
 
         //setup shadow dom styles
         let shadowRoot = this.attachShadow({mode: "open"});

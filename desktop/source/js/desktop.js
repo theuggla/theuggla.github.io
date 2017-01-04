@@ -1,6 +1,3 @@
-
-let InstaChatApp = require('./insta-chat-app.js');
-
 /// /menu items has to be of type expandaböe menu item
 class Desktop {
     constructor(desktopConfig) {

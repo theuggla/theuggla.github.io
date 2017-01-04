@@ -1,11 +1,11 @@
 <!doctype html>
 <head>
-    <link rel="stylesheet" href="/stylesheet/style.css" />
-    <link rel="import" href="/expandable-menu-item.html" />
-    <link rel="import" href="/draggable-window.html" />
-    <link rel="import" href="/memory-app.html" />
-    <link rel="import" href="/insta-chat-app.html" />
-    <link rel="import" href="/image-gallery-app.html" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="import" href="expandable-menu-item.html" />
+    <link rel="import" href="draggable-window.html" />
+    <link rel="import" href="memory-app.html" />
+    <link rel="import" href="insta-chat-app.html" />
+    <link rel="import" href="image-gallery-app.html" />
     <template id="subMenu">
         <a href="" slot="subitem" label="" data-task="open" hide>open new</a> <!--move to template import?-->
         <a href="" slot="subitem" label="" data-task="expand" hide>expand all</a> <!--move to template import?-->
@@ -47,16 +47,16 @@
     </div>
 <nav id="windowSelector">
     <expandable-menu-item data-kind="memory-app" label="memory" row>
-        <img slot="menuitem" src="/image/memory-icon.png" />
+        <img slot="menuitem" src="image/memory-icon.png" />
     </expandable-menu-item>
     <expandable-menu-item data-kind="insta-chat-app" label="chat" row>
-        <img slot="menuitem" src="/image/chat-icon.png" />
+        <img slot="menuitem" src="image/chat-icon.png" />
     </expandable-menu-item row>
     <expandable-menu-item data-kind="image-gallery-app" label="gallery" row>
-        <img slot="menuitem" src="/image/gallery-icon.png" />
+        <img slot="menuitem" src="image/gallery-icon.png" />
     </expandable-menu-item>
 </nav>
 <footer>
-    <script src="/javascript/build.js"></script>
+    <script src="js/app.js"></script>
 </footer>
 </body>
