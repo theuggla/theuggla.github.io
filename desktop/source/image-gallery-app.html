@@ -1,12 +1,12 @@
 <!-- a web component import for an image gallery app app-->
-<link rel="import" href="/expandable-menu-item.html" />
-<link rel="import" href="/draggable-window.html" />
-<link rel="import" href="/image-gallery.html">
+<link rel="import" href="expandable-menu-item.html" />
+<link rel="import" href="draggable-window.html" />
+<link rel="import" href="image-gallery.html">
 
 <template id="galleryWindowTemplate">
-    <style>@import 'stylesheet/image-gallery-app-styles.css';</style>
+    <style>@import '_css/image-gallery-app-styles.css';</style>
     <draggable-window>
-        <img slot="icon" src="/image/gallery-icon.png" />
+        <img slot="icon" src="image/gallery-icon.png" />
         <p slot="title">gallery</p>
         <expandable-menu-item slot="menubaritem" label="gallery" column>
             <a slot="menuitem" data-task="gallery">gallery</a>

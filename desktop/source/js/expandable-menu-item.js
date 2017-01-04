@@ -110,7 +110,7 @@ function makeExpandable(item) {
                                 nextFocus = item.subMenu.length -1;
                             }
                             item.subMenu[nextFocus].focus();
-                            focus(item, item.subMenu[nextFocus]); //make it accessible via css visual clues even if the active element is hidden within shadowDOM
+                            focus(item, item.subMenu[nextFocus]); //make it accessible via _css visual clues even if the active element is hidden within shadowDOM
                             break;
                         case 'ArrowDown':
                             if (!item.displayingSubMenu) {
@@ -121,7 +121,7 @@ function makeExpandable(item) {
                                 nextFocus = 0;
                             }
                             item.subMenu[nextFocus].focus();
-                            focus(item, item.subMenu[nextFocus]); //make it accessible via css visual clues even if the active element is hidden within shadowDOM
+                            focus(item, item.subMenu[nextFocus]); //make it accessible via _css visual clues even if the active element is hidden within shadowDOM
                             break;
                     }
                 }

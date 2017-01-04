@@ -159,6 +159,3 @@ class InstaChatApp extends HTMLElement {
 
 //defines the element
 customElements.define('insta-chat-app', InstaChatApp);
-
-
-module.exports = InstaChatApp;
