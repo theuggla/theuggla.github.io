@@ -1,0 +1,32 @@
+<!-- a web component import for a memory game-->
+
+<template id="memoryTemplate">
+    <style> @import 'stylesheet/memory-game-styles.css';</style>
+    <div id="intro">
+    <slot name="intro">
+        <button>start</button>
+    </slot>
+    </div>
+    <div id="main" class="hide">
+    <div id="gameMessages">
+        <div>Time: <span id="timespan"></span></div>
+        <div>Turns: <span id="turnspan"></span></div>
+    </div>
+    <div id="board">
+        <slot name="brick"></slot>
+    </div>
+    </div>
+    <div id="outro" class="hide">
+    <slot name="outro">
+        <p>well done yay!</p>
+    </slot>
+    </div>
+</template>
+
+<template id="brickTemplate">
+    <div class="brick" slot="brick"><a href=""><img src="" /></a></div>
+</template>
+
+
+<script src='js/memory-game.js'></script>
+

@@ -1,0 +1,50 @@
+/*host styles*/
+:host {
+    background-color: inherit;
+}
+:host a#container {
+    text-decoration: none;
+    display: flex;
+    background-color: inherit;
+}
+:host([row]) a#container {
+    flex-direction: row;
+}
+:host([column]) a#container {
+    flex-direction: column;
+    max-width: 100%;
+}
+/*end host styles*/
+
+/*slot styles*/
+::slotted([slot='subitem']) {
+    display: block;
+    background-color: inherit;
+    padding: 0 2%;
+}
+::slotted([slot='menuitem']) {
+    max-height: 100%;
+}
+:host([row]) ::slotted([slot='subitem']) {
+    display: block;
+}
+::slotted([focused]) {
+    background-color: grey;
+}
+::slotted([slot='subitem']:focus), ::slotted([slot='subitem']:active), ::slotted([slot='subitem']:hover){
+    background-color: black;
+}
+::slotted([hide]) {
+    display: none;
+}
+:host([row]) a#container ::slotted([hide]) {
+    display: none;
+}
+/*end slot styles*/
+
+/*shadow DOM styles*/
+#subitems {
+    white-space: nowrap;
+    margin: 0.2em;
+}
+/*end shadow DOM styles*/

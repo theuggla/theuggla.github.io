@@ -1,0 +1,18 @@
+<!-- a web component import for an expandable menu item.
+When item is clicked, sub items toggle-->
+<!-- slots are [menuitem] and [subitem]. The slots needs to have a 'label' attribute
+ set to the same value as a 'label' attribute of the expandable-menu-item itself.
+ The item needs to have an attribute of either 'row' or 'column' to indicate in which direction to display
+ the sub-items.-->
+ <!--The amount of subitems are optional-->
+<template id="menuItemTemplate">
+    <style> @import 'stylesheet/expandable-menu-item-styles.css';</style>
+    <a href="" id="container">
+    <slot name="menuitem"></slot>
+        <div id="subitems">
+            <slot name="subitem"></slot>
+        </div>
+    </a>
+</template>
+
+<script src="js/expandable-menu-item.js"></script>

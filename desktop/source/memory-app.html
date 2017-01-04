@@ -1,0 +1,54 @@
+<!-- a web component import for a memory game app-->
+<link rel="import" href="/expandable-menu-item.html" />
+<link rel="import" href="/draggable-window.html" />
+<link rel="import" href="/memory-game.html">
+
+<template id="memoryWindowTemplate">
+    <style>@import 'stylesheet/memory-app-styles.css';</style>
+    <draggable-window>
+        <img slot="icon" src="/image/memory-icon.png" />
+        <p slot="title">memory</p>
+        <expandable-menu-item slot="menubaritem" label="game" column>
+            <a slot="menuitem">game</a>
+            <a slot="subitem" label="game" data-task="new" hide>new</a>
+            <a slot="subitem" label="game" data-task="restart" hide>restart</a>
+            <a slot="subitem" label="game" data-task="quit" hide>quit</a>
+        </expandable-menu-item>
+        <expandable-menu-item slot="menubaritem" label="highscore" column>
+            <a slot="menuitem" data-task="highscores">highscores</a>
+        </expandable-menu-item>
+        <expandable-menu-item slot="menubaritem" label="about" column>
+            <a slot="menuitem" data-task="about">about</a>
+        </expandable-menu-item>
+        <memory-game slot="content">
+            <div id="intro" slot="intro">
+                <p>please choose a name and a board size</p>
+                <p>name:</p><input id="name" />
+                <p>size:</p>
+                <ul id="boardsize">
+                    <li><a href="" boardsize="44">4 x 4</a></li>
+                    <li><a href="" boardsize="42">4 x 2</a></li>
+                    <li><a href="" boardsize="24">2 x 4</a></li>
+                </ul>
+            </div>
+            </memory-game>
+        <div slot="content" id="highscores" class="hide">
+            <p>(your time is mutiplied by your turns and divided by the amount of bricks to get your score. the lower the better!)</p>
+            <div id="highscoreDisplay"></div>
+        </div>
+        <div slot="content" id="about" class="hide">
+            <p>trying out some different things here - the window, the memory and the menu are all different web components,
+            put together in a memory-app component. app should be accessible and possible to navigate using only the keyboard.
+            it'll save highscores in local storage in the browser. timer is a separate module.</p>
+        </div>
+        <div slot="outro"><p>well done yay!</p></div>
+    </draggable-window>
+</template>
+
+<template id="highscoresTemplate">
+    <ul>
+        <li></li>
+    </ul>
+</template>
+
+<script src='js/memory-app.js'></script>

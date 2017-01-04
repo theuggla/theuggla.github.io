@@ -1,0 +1,87 @@
+/*main styles*/
+* {
+    box-sizing: border-box;
+}
+
+a, a:link, a:visited{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+/*end main styles*/
+
+/*gallery styles*/
+#gallery {
+    max-height: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: space-between;
+    align-items: baseline;
+    overflow: auto;
+}
+
+::slotted(*) {
+    max-width: 20%;
+    max-height: 20%;
+    margin: 2%;
+}
+
+/*end gallery styles*/
+
+/*image display styles*/
+#imageDisplay {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-start;
+    overflow: auto;
+}
+
+#imageDisplay a.displayed {
+    margin: 0 auto;
+    flex: 1;
+
+}
+
+img.displayed {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+#imageDisplay #localNav {
+    padding: 0;
+    margin: 0;
+    height: 10%;
+    max-height: 10%;
+    min-height: 10%;
+    list-style-type: none;
+}
+
+#imageDisplay #localNav li {
+    padding-left: 1em;
+    float: left;
+    display: inline-block;
+}
+
+#imageDisplay #localNav li:last-of-type {
+    padding-right: 1em;
+    float: right;
+    display: inline-block;
+}
+/*end image display styles*/
+
+
+/* hide styles*/
+.hide {
+    display: none;
+}
+
+#imageDisplay.hide {
+    display: none;
+}
+
+#gallery.hide {
+    display: none;
+}
+/*end hide styles*/

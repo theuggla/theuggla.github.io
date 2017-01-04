@@ -1,0 +1,19 @@
+<!-- a web component import for a chat-->
+
+<template id="chatTemplate">
+    <style> @import 'stylesheet/insta-chat-styles.css';</style>
+    <div id="chat">
+    <div id="messageWindow"></div>
+    <div id="messageArea"><p>write:</p><textarea></textarea></div>
+    </div>
+</template>
+
+<template id="messageTemplate">
+    <div>
+        <p class="author"></p>
+        <p class="message"></p>
+    </div>
+</template>
+
+
+<script src='js/insta-chat.js'></script>

@@ -1,0 +1,62 @@
+<!doctype html>
+<head>
+    <link rel="stylesheet" href="/stylesheet/style.css" />
+    <link rel="import" href="/expandable-menu-item.html" />
+    <link rel="import" href="/draggable-window.html" />
+    <link rel="import" href="/memory-app.html" />
+    <link rel="import" href="/insta-chat-app.html" />
+    <link rel="import" href="/image-gallery-app.html" />
+    <template id="subMenu">
+        <a href="" slot="subitem" label="" data-task="open" hide>open new</a> <!--move to template import?-->
+        <a href="" slot="subitem" label="" data-task="expand" hide>expand all</a> <!--move to template import?-->
+        <a href="" slot="subitem" label="" data-task="minimize" hide>minimize all</a> <!--move to template import?-->
+        <a href="" slot="subitem" label="" data-task="close" hide>close all</a> <!--move to template import?-->
+    </template>
+    <template id="linkTemplate">
+        <link rel="import" href="">
+    </template>
+    <template id="pictures">
+        <img slot="picture" src="image/GraphicsStore.png" label="graphicsstore"/>
+        <p for="graphicsstore">basic mock up of a website, logo made in illustrator and the rest in photoshop</p>
+        <img slot="picture" src="image/TopGame.png" label="topgame"/>
+        <p for="topgame">diving in to illustrator a bit more, this is a mock up
+        of a potential xbox game. trying to play with textures and perspective.</p>
+        <img slot="picture" src="image/MeAndMyself.png" label="self"/>
+        <p for="self">trying out illustrator - this is a basic portrait drawing from a photograph</p>
+    </template>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div id="openWindows">
+    <draggable-window id="aboutWindow">
+        <p slot="title">about the desktop</p>
+        <div slot="content">
+            <p>be welcomed to my experimental desktop. </p>
+            <p>it's built as a single page application and
+                is a testing ground for
+                new stuff, both in the desktop functionality itself and in each of the
+                apps. at the moment the techniques I'm trying out are web components and service workers
+                (try it on mobile! try it offline!) with some web sockets and my dabbings in illustrator
+                thrown in. credit for the icons goes to david purnell of the noun project, and the memory
+                bricks are courtesy of moa alfredsson. the site will store cookies and the likes in your
+                browser (to 'enhance your experience', as they so convincingly say), so if you don't want
+                that, run, run away.
+            </p>
+        </div>
+    </draggable-window>
+    </div>
+<nav id="windowSelector">
+    <expandable-menu-item data-kind="memory-app" label="memory" row>
+        <img slot="menuitem" src="/image/memory-icon.png" />
+    </expandable-menu-item>
+    <expandable-menu-item data-kind="insta-chat-app" label="chat" row>
+        <img slot="menuitem" src="/image/chat-icon.png" />
+    </expandable-menu-item row>
+    <expandable-menu-item data-kind="image-gallery-app" label="gallery" row>
+        <img slot="menuitem" src="/image/gallery-icon.png" />
+    </expandable-menu-item>
+</nav>
+<footer>
+    <script src="/javascript/build.js"></script>
+</footer>
+</body>

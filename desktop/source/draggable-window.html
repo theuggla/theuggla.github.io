@@ -1,0 +1,21 @@
+<!-- a web component import for a draggable window-->
+<!-- slots are [icon], [title], [menubar] and [content] of the window.
+All are optional.-->
+
+<template id="windowTemplate">
+    <style>@import 'stylesheet/draggable-window-styles.css';</style>
+    <div id="bar">
+        <slot name="icon"></slot>
+        <slot name="title"></slot>
+        <a href="" id="close">X</a>
+        <a href="" id="minimize">-</a>
+    </div>
+    <div id="menubar">
+        <slot name="menubaritem"></slot>
+    </div>
+    <div id="content">
+        <slot name="content"></slot>
+    </div>
+</template>
+
+<script src="js/draggable-window.js"></script>

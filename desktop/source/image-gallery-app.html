@@ -1,0 +1,34 @@
+<!-- a web component import for an image gallery app app-->
+<link rel="import" href="/expandable-menu-item.html" />
+<link rel="import" href="/draggable-window.html" />
+<link rel="import" href="/image-gallery.html">
+
+<template id="galleryWindowTemplate">
+    <style>@import 'stylesheet/image-gallery-app-styles.css';</style>
+    <draggable-window>
+        <img slot="icon" src="/image/gallery-icon.png" />
+        <p slot="title">gallery</p>
+        <expandable-menu-item slot="menubaritem" label="gallery" column>
+            <a slot="menuitem" data-task="gallery">gallery</a>
+        </expandable-menu-item>
+        <expandable-menu-item slot="menubaritem" label="about" column>
+            <a slot="menuitem" data-task="about">about</a>
+        </expandable-menu-item>
+        <expandable-menu-item slot="menubaritem" label="quit" column>
+            <a slot="menuitem" data-task="quit">quit</a>
+        </expandable-menu-item>
+        <image-gallery slot="content">
+        </image-gallery>
+        <div slot="content" id="about" class="hide">
+            <p>mostly made to have somewhere to display my illustrator and photoshop experiments. should be accessible and possible to navigate using only the
+            keyboard. menu, window and image gallery are all different web components.</p>
+        </div>
+    </draggable-window>
+</template>
+
+<template id="imgTemplate">
+    <a href="" slot="picture"><img src="" label=""/></a>
+    <p label=""></p>
+</template>
+
+<script src='js/image-gallery-app.js'></script>

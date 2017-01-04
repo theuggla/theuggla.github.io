@@ -1,0 +1,19 @@
+<!-- a web component import for a gallery-->
+
+<template id="galleryTemplate">
+    <style> @import 'stylesheet/image-gallery-styles.css';</style>
+    <div id="gallery">
+        <slot name ="picture"></slot>
+    </div>
+    <div id="imageDisplay" class="hide">
+        <ul id="localNav">
+            <li disabled aria-disabled="true"><a href="" data-task="back">&lt;</a></li>
+            <li disabled aria-disabled="true"><a href="" data-task="forward">&gt;</a></li>
+            <li><a href="" data-task="gallery">gallery</a></li>
+        </ul>
+        <a href="" class="displayed"><img src="" class="displayed"/></a>
+        <p id="description"></p>
+    </div>
+</template>
+
+<script src='js/image-gallery.js'></script>

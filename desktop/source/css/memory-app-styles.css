@@ -1,0 +1,106 @@
+/* window decoration styles*/
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+img[slot] {
+    background-color: antiquewhite;
+    border-radius: 1em;
+}
+
+a:link, a:visited, a {
+    text-decoration: none;
+    color: #454545;
+}
+/*end window decoration styles*/
+
+/* menu bar styles */
+expandable-menu-item a:hover, expandable-menu-item a:active, expandable-menu-item a:focus {
+    background-color: white;
+}
+
+expandable-menu-item {
+    margin-left: 5%;
+}
+/* end menu bar styles*/
+
+/*intro styles*/
+#boardsize {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#boardsize li {
+    margin-top: 5%;
+    display: inline-block;
+}
+
+#boardsize a {
+    background-color: rgba(180, 180, 180, 0.88);
+    padding: 0.5em;
+    white-space: nowrap;
+    border-right-style: ridge;
+    border-bottom-style: ridge;
+}
+#intro p {
+    margin: 3%;
+}
+
+#intro input {
+    text-align: center;
+    max-width: 80%;
+}
+/* end intro styles*/
+
+
+/*highscore styles*/
+#highscores a {
+    background-color: rgba(180, 180, 180, 0.88);
+    padding: 0.2em;
+    white-space: nowrap;
+    border-right-style: ridge;
+    border-bottom-style: ridge;
+}
+
+#highscores p {
+    font-size: 0.7em;
+}
+
+#highscoreDisplay ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 1em;
+}
+/*end highscore styles*/
+
+.hide {
+    display: none;
+}
+
+
+
+/*media queries*/
+@media screen and (max-width: 860px) {
+
+    draggable-window {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    draggable-window {
+        font-size: 0.5em;
+        width: 50vw;
+        height: 50vw;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    #outro a {
+        font-size: 0.7em;
+    }
+}
+/*end media queries*/

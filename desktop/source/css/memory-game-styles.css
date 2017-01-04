@@ -1,0 +1,46 @@
+/* non-game styles*/
+#intro button, #outro button {
+    margin-top: 25%;
+    text-align: center;
+    padding: 1em;
+    font-family: veteran_typewriterregular, serif;
+    font-size: 1em;
+    background-color: rgba(180, 180, 180, 0.88);
+    white-space: nowrap;
+    border-color: black;
+    border-style: none ridge ridge none;
+}
+/* end non game styles*/
+
+/*game styles*/
+
+/*slotted styles*/
+#board ::slotted([slot='brick']) {
+    display: inline-block;
+    max-width: 15%;
+    max-height: 15%;
+}
+
+#board ::slotted([slot='brick']) img {
+    display: inline-block;
+    max-width: 15%;
+    max-height: 15%;
+}
+
+::slotted([hidden]) {
+    visibility: hidden;
+}
+/*slotted styles*/
+
+#gameMessages div {
+    display: inline-block;
+    width: 30%;
+}
+/*end game styles*/
+
+.hide {
+    display: none;
+}
+
+
+
