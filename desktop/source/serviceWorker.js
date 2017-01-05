@@ -18,9 +18,9 @@ let config = {
         '/desktop/source/image/chat-icon.png',
         '/desktop/source/image/memory-icon.png',
         '/desktop/source/image/gallery-icon.png',
-        '/desktop/source/image/desktop-background.png',
+        '/desktop/source/image/desktop-background.jpg',
         '/desktop/source/image/draggable-window-border.png',
-        '/desktop/source/javascript/build.js',
+        '/desktop/source/js/desktop.js',
         '/desktop/source/stylesheet/style.css',
         '/desktop/source/index.html'
     ]
@@ -50,9 +50,9 @@ self.addEventListener('install', event => {
                 '/desktop/source/image/chat-icon.png',
                 '/desktop/source/image/memory-icon.png',
                 '/desktop/source/image/gallery-icon.png',
-                '/desktop/source/image/desktop-background.png',
+                '/desktop/source/image/desktop-background.jpg',
                 '/desktop/source/image/draggable-window-border.png',
-                '/desktop/source/javascript/build.js',
+                '/desktop/source/js/desktop.js',
                 '/desktop/source/stylesheet/style.css',
                 '/desktop/source/index.html'
                 ])
