@@ -98,15 +98,17 @@ class InstaChatApp extends HTMLElement {
         });
 
         namespace.querySelector('button').addEventListener('click', (event) => {
-            let name = namespace.querySelector('input').value;
-            chatspace.changeConfig({name: name});
-            let config = JSON.parse(localStorage.chatConfig);
-            config.name = name;
-            localStorage.chatConfig = JSON.stringify(config);
-            namespace.classList.add('hide');
-            aboutspace.classList.add('hide');
-            socketspace.classList.add('hide');
-            chatspace.classList.remove('hide');
+            if (chatspace) {
+                let name = namespace.querySelector('input').value;
+                chatspace.changeConfig({name: name});
+                let config = JSON.parse(localStorage.chatConfig);
+                config.name = name;
+                localStorage.chatConfig = JSON.stringify(config);
+                namespace.classList.add('hide');
+                aboutspace.classList.add('hide');
+                socketspace.classList.add('hide');
+                chatspace.classList.remove('hide');
+            }
         });
 
         //event listeners for menu, add separate ones for accessibility reasons
@@ -116,13 +118,17 @@ class InstaChatApp extends HTMLElement {
             if (target.getAttribute('data-task')) {
                 switch (target.getAttribute('data-task')) {
                     case 'namechange':
-                        chatspace.classList.add('hide');
-                        aboutspace.classList.add('hide');
-                        socketspace.classList.add('hide');
-                        namespace.classList.remove('hide');
+                        if (chatspace) {
+                            chatspace.classList.add('hide');
+                            aboutspace.classList.add('hide');
+                            socketspace.classList.add('hide');
+                            namespace.classList.remove('hide');
+                        }
                         break;
                     case 'socketchange':
-                        chatspace.classList.add('hide');
+                        if (chatspace) {
+                            chatspace.classList.add('hide');
+                        }
                         aboutspace.classList.add('hide');
                         namespace.classList.add('hide');
                         socketspace.classList.remove('hide');
@@ -141,11 +147,13 @@ class InstaChatApp extends HTMLElement {
             if (target.getAttribute('data-task')) {
                 switch (target.getAttribute('data-task')) {
                     case 'about':
-                        namespace.classList.add('hide');
-                        chatspace.classList.add('hide');
-                        socketspace.classList.add('hide');
-                        aboutspace.classList.remove('hide');
-                        break;
+                        if (chatspace) {
+                            namespace.classList.add('hide');
+                            chatspace.classList.add('hide');
+                            socketspace.classList.add('hide');
+                            aboutspace.classList.remove('hide');
+                            break;
+                        }
                 }
             }
         });

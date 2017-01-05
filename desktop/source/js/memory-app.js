@@ -13,7 +13,7 @@ class MemoryApp extends HTMLElement {
      */
     constructor() {
         super();
-        let memoryWindowTemplate = document.querySelector('link[href="/desktop//memory-app.html"]').import.querySelector("#memoryWindowTemplate");
+        let memoryWindowTemplate = document.querySelector('link[href="/desktop/source/memory-app.html"]').import.querySelector("#memoryWindowTemplate");
 
         let shadowRoot = this.attachShadow({mode: "open"});
         let instance = memoryWindowTemplate.content.cloneNode(true);
