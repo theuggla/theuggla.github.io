@@ -7,8 +7,6 @@
 *
 */
 
-let InstaChat = require('./insta-chat.js');
-
 class InstaChatApp extends HTMLElement {
     /**
      * Initiates a chat-window, sets up shadow DOM.
