@@ -148,14 +148,14 @@ class InstaChatApp extends HTMLElement {
                 switch (target.getAttribute('data-task')) {
                     case 'about':
                         if (chatspace) {
-                            namespace.classList.add('hide');
                             chatspace.classList.add('hide');
+                        }
+                            namespace.classList.add('hide');
                             socketspace.classList.add('hide');
                             aboutspace.classList.remove('hide');
                             break;
                         }
                 }
-            }
         });
 
         //event listener for menu

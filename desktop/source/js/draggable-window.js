@@ -186,36 +186,46 @@ function makeDraggable(el) {
 
     //initiate a mouse event from the touch
     function touchHandler(event) {
+        let onlongtouch;
+        let timer;
+        let touchduration = 500; //length of time we want the user to touch before we do something
         let touches = event.changedTouches;
         let first = touches[0];
         let type = "";
 
         switch (event.type) {
             case "touchstart":
-                type = "mousedown";
+                timer = setTimeout(() => {
+                    type = "mousedown";
+                }, 20);
                 break;
             case "touchmove":
                 type = "mousemove";
                 break;
             case "touchend":
+                if (timer) {
+                    clearTimeout(timer);
+                }
                 type = "mouseup";
                 break;
             default:
                 return;
         }
 
-        //set up the event
-        let simulatedEvent = new MouseEvent(type, {
-            screenX: first.screenX,
-            screenY: first.screenY,
-            clientX: first.clientX,
-            clientY: first.clientY,
-            button: 1,
-            bubbles: true
+        if (type) {
+            //set up the event
+            let simulatedEvent = new MouseEvent(type, {
+                screenX: first.screenX,
+                screenY: first.screenY,
+                clientX: first.clientX,
+                clientY: first.clientY,
+                button: 1,
+                bubbles: true
 
-        });
+            });
 
-        el.dispatchEvent(simulatedEvent);
+            el.dispatchEvent(simulatedEvent);
+        }
     }
 
     function touchevents() {
