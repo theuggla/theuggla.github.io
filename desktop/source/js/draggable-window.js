@@ -194,7 +194,6 @@ function makeDraggable(el) {
         switch (event.type) {
             case "touchstart":
                 touchTimer = setTimeout(() => {
-                    debugger;
                     type = "mousedown";
                 }, 2000);
                 break;
@@ -203,7 +202,6 @@ function makeDraggable(el) {
                 break;
             case "touchend":
                 if (touchTimer) {
-                    debugger;
                     clearTimeout(touchTimer);
                 }
                 type = "mouseup";
