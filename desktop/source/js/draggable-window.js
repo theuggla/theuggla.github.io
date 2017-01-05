@@ -187,6 +187,7 @@ function makeDraggable(el) {
     //initiate a mouse event from the touch
     function touchHandler(event) {
         if (event.target.assignedSlot && event.target.assignedSlot.name === 'title') { //only drag from the title bar on touch, as to not interrupt scrolling
+            debugger;
             let touches = event.changedTouches;
             let first = touches[0];
             let type = "";
