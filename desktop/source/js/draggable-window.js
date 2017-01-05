@@ -187,7 +187,6 @@ function makeDraggable(el) {
 
     //initiate a mouse event from the touch
     function touchHandler(event) {
-        let onlongtouch;
         let touches = event.changedTouches;
         let first = touches[0];
         let type = "";
@@ -205,7 +204,7 @@ function makeDraggable(el) {
             case "touchend":
                 if (touchTimer) {
                     debugger;
-                    clearTimeout(timer);
+                    clearTimeout(touchTimer);
                 }
                 type = "mouseup";
                 break;
