@@ -15,12 +15,15 @@
     flex-direction: column;
     overflow: hidden;
 }
+
 :host(:focus) {
     background-color: rgb(202, 187, 164);
 }
+
 :host([minimized]) {
     display: none;
 }
+
 /* end host styles*/
 
 /*slot styles*/

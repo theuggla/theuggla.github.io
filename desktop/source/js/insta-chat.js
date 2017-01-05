@@ -15,7 +15,7 @@ class InstaChat extends HTMLElement {
      */
     constructor(config = {}, startMessages) {
         super();
-        let chatTemplate = document.querySelector('link[href="/desktop/source/insta-chat-app.html"]').import.querySelector('link[href="/desktop/source/insta-chat.html"]').import.querySelector("#chatTemplate"); //shadow DOM import
+        let chatTemplate = document.querySelector('link[href="/desktop//insta-chat-app.html"]').import.querySelector('link[href="/desktop//insta-chat.html"]').import.querySelector("#chatTemplate"); //shadow DOM import
 
         //setup shadow dom styles
         let shadowRoot = this.attachShadow({mode: "open"});
@@ -24,10 +24,10 @@ class InstaChat extends HTMLElement {
 
         //set config object as this.config
         this.config = {
-            url: config.url || 'wss:vhost3.lnu.se:20080/socket/',
+            url: config.url || '',
             name: config.name || 'severus snape',
             channel: config.channel || '',
-            key: config.key || 'eDBE76deU7L0H9mEBgxUKVR0VCnq0XBd'
+            key: config.key || ''
         };
         this.messages = startMessages || [];
         this.socket = null;
@@ -80,13 +80,12 @@ class InstaChat extends HTMLElement {
             let socket = this.socket;
 
             //check for established connection
-            if (socket && socket.readyState) {
+            if (socket && socket.readyState && socket.url === this.config.url) {
                 resolve(socket);
             } else {
                 socket = new WebSocket(this.config.url);
 
                 socket.addEventListener('open', () => {
-                    this.resetOnlineChecker();
                     resolve(socket);
                 });
 
@@ -96,13 +95,10 @@ class InstaChat extends HTMLElement {
 
                 socket.addEventListener('message', (event) => {
                     let response = JSON.parse(event.data);
-                    console.log(response);
                     if (response.type === 'message') {
                         this.print(response);
                         this.messageManager.setChatLog(response); //save message in local storage
                     } else if (response.type === 'heartbeat') {
-                        console.log('heartbeat');
-                        this.resetOnlineChecker(); //reset for every heartbeat
                         this.messageManager.getUnsent().forEach((message) => {
                             this.send(message);
                         });
@@ -134,7 +130,7 @@ class InstaChat extends HTMLElement {
         this.connect()
             .then((socket) => {
                 socket.send(JSON.stringify(data));
-        }).catch((response) => {
+            }).catch((response) => {
             this.messageManager.setUnsent(data);
             this.print(data, true); //print message as "unsent" to make it look different;
         });
@@ -147,7 +143,7 @@ class InstaChat extends HTMLElement {
      * @param unsent {boolean} true if the message has not been successfully sent
      */
     print(message, unsent) {
-        let messageTemplate = document.querySelector('link[href="/desktop/source/insta-chat-app.html"]').import.querySelector('link[href="/desktop/source/insta-chat.html"]').import.querySelector("#messageTemplate"); //message display template
+        let messageTemplate = document.querySelector('link[href="/desktop//insta-chat-app.html"]').import.querySelector('link[href="/desktop//insta-chat.html"]').import.querySelector("#messageTemplate"); //message display template
 
         let chatWindow = this.shadowRoot.querySelector('#messageWindow');
         let messageDiv = document.importNode(messageTemplate.content.firstElementChild, true);
@@ -163,25 +159,13 @@ class InstaChat extends HTMLElement {
     }
 
     /**
-     * Clears and sets a new timeout to make sure server is still connected.
-     * If connection is lost and then regained, prints all unsent messages.
-     */
-    resetOnlineChecker() {
-        clearTimeout(this.onlineChecker);
-
-        this.onlineChecker = setTimeout(() => {
-            //TODO: something here
-        }, 60000);
-    }
-
-    /**
      * Returns an object to manage messages.
      * @returns {object} the object.
      */
     get messageManager() {
-            let storage = localStorage;
-            let chatLog = [];
-            let unsent = [];
+        let storage = localStorage;
+        let chatLog = [];
+        let unsent = [];
 
         return {
             /**
@@ -268,3 +252,5 @@ class InstaChat extends HTMLElement {
 
 //defines the element
 customElements.define('insta-chat', InstaChat);
+
+module.exports = InstaChat;

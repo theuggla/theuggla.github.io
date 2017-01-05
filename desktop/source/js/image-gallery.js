@@ -23,14 +23,14 @@ class ImageGallery extends HTMLElement {
 
     /**
      * Runs when gallery is inserted into the DOM.
-     * Connects to the server, sets up event listeners and prints
-     * already saved messages if any.
+     * Sets up event listeners and tracks the picture sources.
      */
     connectedCallback() {
         let gallery = this.shadowRoot.querySelector('#gallery');
         let imageDisplay = this.shadowRoot.querySelector('#imageDisplay');
         let localNav = this.shadowRoot.querySelector('#localNav');
 
+        //make array of all the picture sources for traversing
         this.pictureSources = [];
         Array.prototype.forEach.call(this.querySelectorAll('[slot ="picture"'), (a) => {
             if (a.hasAttribute('src') && this.pictureSources.indexOf(a.getAttribute('src')) === -1) {
@@ -51,43 +51,45 @@ class ImageGallery extends HTMLElement {
         });
 
         localNav.addEventListener('click', (event) => {
-                let task = event.target.getAttribute('data-task');
-                let currentPicture = imageDisplay.querySelector('img.displayed');
-                let currentPictureSrc = currentPicture.getAttribute('src');
-                let nextPictureSrc;
+            let task = event.target.getAttribute('data-task');
+            let currentPicture = imageDisplay.querySelector('img.displayed');
+            let currentPictureSrc = currentPicture.getAttribute('src');
+            let nextPictureSrc;
 
-               if (this.querySelectorAll('[slot ="picture"').length !== this.pictureSources.length) { //check if more picture has been added
-                    Array.prototype.forEach.call(this.querySelectorAll('[slot ="picture"'), (a) => { //in that case update sourcelist
-                        let src = a.getAttribute('src') || a.firstElementChild.getAttribute('src');
-                        if (this.pictureSources.indexOf(src) === -1) {
-                            this.pictureSources.push(src);
-                        }
-                    });
-                }
+            if (this.querySelectorAll('[slot ="picture"').length !== this.pictureSources.length) { //check if more pictures has been added
+                Array.prototype.forEach.call(this.querySelectorAll('[slot ="picture"'), (a) => { //in that case update sourcelist
+                    let src = a.getAttribute('src') || a.firstElementChild.getAttribute('src');
+                    if (this.pictureSources.indexOf(src) === -1) {
+                        this.pictureSources.push(src);
+                    }
+                });
+            }
 
-                switch (task) {
-                    case 'forward':
-                        nextPictureSrc = this.pictureSources.indexOf(currentPictureSrc) + 1;
-                        if (nextPictureSrc === this.pictureSources.length) {
-                            nextPictureSrc = 0;
-                        }
-                        nextPictureSrc = this.pictureSources[nextPictureSrc];
-                        this.displayPicture(nextPictureSrc, imageDisplay);
-                        break;
-                    case 'back':
-                        nextPictureSrc = this.pictureSources.indexOf(currentPictureSrc) - 1;
-                        if (nextPictureSrc < 0) {
-                            nextPictureSrc = this.pictureSources.length - 1;
-                        }
-                        nextPictureSrc = this.pictureSources[nextPictureSrc];
-                        this.displayPicture(nextPictureSrc, imageDisplay);
-                        break;
-                    case 'gallery':
-                       this.showThumbnails();
-                        break;
-                }
+            //traverse through the picture sources
+            switch (task) {
+                case 'forward':
+                    nextPictureSrc = this.pictureSources.indexOf(currentPictureSrc) + 1;
+                    if (nextPictureSrc === this.pictureSources.length) {
+                        nextPictureSrc = 0;
+                    }
+                    nextPictureSrc = this.pictureSources[nextPictureSrc];
+                    this.displayPicture(nextPictureSrc, imageDisplay);
+                    break;
+                case 'back':
+                    nextPictureSrc = this.pictureSources.indexOf(currentPictureSrc) - 1;
+                    if (nextPictureSrc < 0) {
+                        nextPictureSrc = this.pictureSources.length - 1;
+                    }
+                    nextPictureSrc = this.pictureSources[nextPictureSrc];
+                    this.displayPicture(nextPictureSrc, imageDisplay);
+                    break;
+                case 'gallery':
+                    this.showThumbnails();
+                    break;
+            }
         });
 
+        //show full image in separate window if clicked
         imageDisplay.querySelector('a.displayed').addEventListener('click', (event) => {
             let src = event.target.src || event.target.href;
             if (src) {
@@ -97,10 +99,12 @@ class ImageGallery extends HTMLElement {
 
     }
 
-    disconnectedCallback() {
-
-    }
-
+    /**
+     * Displays an image with a description. Description has to have
+     * a for-attribute that matches the images label-attribute.
+     * @param src {string} the source of the picture to display
+     * @param destination {HTMLElement} where to display the image.
+     */
     displayPicture(src, destination) {
         let display = destination;
         let img = display.querySelector('img.displayed');
@@ -117,6 +121,9 @@ class ImageGallery extends HTMLElement {
         p.textContent = description;
     }
 
+    /**
+     * Shows clickable thumbnails of all the images in the gallery.
+     */
     showThumbnails() {
         let gallery = this.shadowRoot.querySelector('#gallery');
         let imageDisplay = this.shadowRoot.querySelector('#imageDisplay');

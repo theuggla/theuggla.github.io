@@ -13,7 +13,7 @@ class MemoryApp extends HTMLElement {
      */
     constructor() {
         super();
-        let memoryWindowTemplate = document.querySelector('link[href="/desktop/source/memory-app.html"]').import.querySelector("#memoryWindowTemplate");
+        let memoryWindowTemplate = document.querySelector('link[href="/desktop//memory-app.html"]').import.querySelector("#memoryWindowTemplate");
 
         let shadowRoot = this.attachShadow({mode: "open"});
         let instance = memoryWindowTemplate.content.cloneNode(true);
@@ -35,29 +35,29 @@ class MemoryApp extends HTMLElement {
         let highscoresOption = this.shadowRoot.querySelector('[label="highscore"]');
         let aboutOption = this.shadowRoot.querySelector('[label="about"]');
 
-        //menu event listeners
+        //menu event listeners, add separate ones for accessibility reasons
         gameOptions.addEventListener('click', (event) => {
             let target = event.target.focused || event.target.querySelector('[data-task]') || event.target; //shadow DOM accessibility issues
             let task = target.getAttribute('data-task');
-                if (task) {
-                    switch (task) {
-                        case 'restart':
-                            gamespace.classList.remove('hide');
-                            highscorespace.classList.add('hide');
-                            aboutspace.classList.add('hide');
-                            gamespace.replay();
-                            break;
-                        case 'new':
-                            gamespace.classList.remove('hide');
-                            highscorespace.classList.add('hide');
-                            aboutspace.classList.add('hide');
-                            gamespace.restart();
-                            break;
-                        case 'quit':
-                            this.close();
-                            break;
-                    }
+            if (task) {
+                switch (task) {
+                    case 'restart':
+                        gamespace.classList.remove('hide');
+                        highscorespace.classList.add('hide');
+                        aboutspace.classList.add('hide');
+                        gamespace.replay();
+                        break;
+                    case 'new':
+                        gamespace.classList.remove('hide');
+                        highscorespace.classList.add('hide');
+                        aboutspace.classList.add('hide');
+                        gamespace.restart();
+                        break;
+                    case 'quit':
+                        this.close();
+                        break;
                 }
+            }
         }, true);
 
         //menu event listener
@@ -213,14 +213,24 @@ class MemoryApp extends HTMLElement {
         }
     }
 
+    /**
+     * @returns true if the window containing the app is open.
+     */
     get open() {
         return this.shadowRoot.querySelector('draggable-window').open;
     }
 
+    /**
+     * @returns true if the window containing the app is minimized.
+     */
     get minimized() {
         return this.shadowRoot.querySelector('draggable-window').minimized;
     }
 
+    /**
+     * Sets the minimized property of the window containing the app.
+     * @param minimize {boolean} whether to minimize
+     */
     set minimized(minimize) {
         this.shadowRoot.querySelector('draggable-window').minimized = minimize;
     }

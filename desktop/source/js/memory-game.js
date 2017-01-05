@@ -8,82 +8,7 @@
  */
 
 //requires
-/**
- * Module for Timer.
- *
- * @author Molly Arhammar
- * @version 1.0.0
- */
-
-class Timer {
-    /**
-     * Initiates a Timer.
-     * @param startTime {number} where to start counting.
-     */
-    constructor(startTime = 0) {
-        this.count = startTime;
-    }
-
-    /**
-     * @returns {number} the count
-     */
-    get time() {
-        return this.count;
-    }
-
-    /**
-     * Sets the time on the timer.
-     * @param newTime {number} the new time
-     */
-    set time(newTime) {
-        this.count = newTime;
-    }
-    /**
-     * starts the timer. increments time every 100 milliseconds.
-     * @param time {number} what number to start it on.
-     */
-    start(time = this.time) {
-        this.count = time;
-        this.timer = setInterval(() => {
-            this.count += 100;
-        }, 100);
-    }
-    /**
-     * starts the timer. decrements time every 100 milliseconds.
-     * @param time {number} what number to start it on.
-     */
-    countdown(time) {
-        this.count = time || this.count;
-        this.timer = setInterval(() => {
-            this.count -= 100;
-        }, 100);
-    }
-    /**
-     * stops the Timer.
-     * @returns the count.
-     */
-    stop() {
-        clearInterval(this.timer);
-        clearInterval(this.displayInterval);
-        return this.count;
-    }
-    /**
-     * Displays a rounded value of the count of the timer
-     * to the desired precision, at an interval.
-     * @param destination {node} where to make the display
-     * @param interval {number} the interval to make the display in, in milliseconds
-     * @param precision {number}the number to divide the displayed milliseconds by
-     * @returns the interval.
-     *
-     */
-    display(destination, interval = 100, precision = 1000) {
-        this.displayInterval = setInterval( ()=> {
-            destination.textContent = Math.round(this.count / precision);
-        }, interval);
-        return this.displayInterval;
-    }
-}
-
+let Timer = require('./timer.js');
 
 
 class MemoryGame extends HTMLElement {
@@ -172,7 +97,7 @@ class MemoryGame extends HTMLElement {
      * Adds the bricks to the board and renders them in the DOM.
      */
     draw() {
-        let brickTemplate = document.querySelector('link[href="/desktop/source/memory-app.html"]').import.querySelector('link[href="/desktop/source/memory-game.html"]').import.querySelector("#brickTemplate"); //brick template
+        let brickTemplate = document.querySelector('link[href="/memory-app.html"]').import.querySelector('link[href="/memory-game.html"]').import.querySelector("#brickTemplate"); //brick template
 
         let brick;
         let match;
@@ -202,7 +127,7 @@ class MemoryGame extends HTMLElement {
             let brickDiv = document.importNode(brickTemplate.content, true);
             let img = brickDiv.querySelector("img");
             let brick = theSet[i];
-            img.src = 'image/memory-brick-' + brick.draw() + '.png';
+            img.src = '/desktop/source/image/memory-brick-' + brick.draw() + '.png';
             img.setAttribute("brickNumber", i);
             this.appendChild(brickDiv);
 
@@ -269,7 +194,7 @@ class MemoryGame extends HTMLElement {
             if (img) {
                 let brickNumber = img.getAttribute("brickNumber");
                 if (this.set[brickNumber].draw() !== 0) { //turn the brick over if it's not turned
-                    img.src = 'image/memory-brick-' + this.set[brickNumber].turn() + '.png';
+                    img.src = '/desktop/source/image/memory-brick-' + this.set[brickNumber].turn() + '.png';
                 }
             }
         });
@@ -371,7 +296,7 @@ function playGame(set, game) {
                 }
 
                 let brick = set[brickNumber];
-                img.src = '/image/' + brick.turn() + '.png';
+                img.src = '/desktop/source/image/memory-brick-' + brick.turn() + '.png';
 
                 if (!choice1) { //first brick to be turned
                     img1 = img;
@@ -393,8 +318,8 @@ function playGame(set, game) {
                         }
                     } else { //bricks are not the same
                         setTimeout(() => {
-                            img1.src = 'image/' + choice1.turn() + '.png';
-                            img2.src = 'image/' + choice2.turn() + '.png';
+                            img1.src = '/desktop/source/image/memory-brick-' + choice1.turn() + '.png';
+                            img2.src = '/desktop/source/image/memory-brick-' + choice2.turn() + '.png';
                             choice1 = "";
                             choice2 = "";
                             img1 = "";

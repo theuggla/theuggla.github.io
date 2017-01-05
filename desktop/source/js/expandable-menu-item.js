@@ -81,50 +81,50 @@ function makeExpandable(item) {
 
     let events = function () {
         addEventListeners(item, 'focusin click', ((event) => {
-                arrowExpand = true;
-                if (event.type === 'click') {
-                    mouseExpand = true;
-                    show = !show;
-                    item.toggleSubMenu(show);
-                    event.preventDefault();
-                } else {
-                    item.toggleSubMenu(true);
-                }
+            arrowExpand = true;
+            if (event.type === 'click') {
+                mouseExpand = true;
+                show = !show;
+                item.toggleSubMenu(show);
+                event.preventDefault();
+            } else {
+                item.toggleSubMenu(true);
+            }
 
         }));
         addEventListeners(item, 'keydown', ((event) => { //make the sub-items traversable by pressing the arrow keys
-                if (arrowExpand) {
-                    switch (event.key) {
-                        case 'ArrowRight':
+            if (arrowExpand) {
+                switch (event.key) {
+                    case 'ArrowRight':
+                        item.toggleSubMenu(true);
+                        break;
+                    case 'ArrowLeft':
+                        item.toggleSubMenu(false);
+                        break;
+                    case 'ArrowUp':
+                        if (!item.displayingSubMenu) {
                             item.toggleSubMenu(true);
-                            break;
-                        case 'ArrowLeft':
-                            item.toggleSubMenu(false);
-                            break;
-                        case 'ArrowUp':
-                            if (!item.displayingSubMenu) {
-                                item.toggleSubMenu(true);
-                            }
-                            nextFocus -= 1;
-                            if (nextFocus < 0 || nextFocus >= item.subMenu.length) {
-                                nextFocus = item.subMenu.length -1;
-                            }
-                            item.subMenu[nextFocus].focus();
-                            focus(item, item.subMenu[nextFocus]); //make it accessible via stylesheet visual clues even if the active element is hidden within shadowDOM
-                            break;
-                        case 'ArrowDown':
-                            if (!item.displayingSubMenu) {
-                                item.toggleSubMenu(true);
-                            }
-                            nextFocus += 1;
-                            if (nextFocus >= item.subMenu.length || nextFocus < 0) {
-                                nextFocus = 0;
-                            }
-                            item.subMenu[nextFocus].focus();
-                            focus(item, item.subMenu[nextFocus]); //make it accessible via stylesheet visual clues even if the active element is hidden within shadowDOM
-                            break;
-                    }
+                        }
+                        nextFocus -= 1;
+                        if (nextFocus < 0 || nextFocus >= item.subMenu.length) {
+                            nextFocus = item.subMenu.length -1;
+                        }
+                        item.subMenu[nextFocus].focus();
+                        focus(item, item.subMenu[nextFocus]); //make it accessible via css visual clues even if the active element is hidden within shadowDOM
+                        break;
+                    case 'ArrowDown':
+                        if (!item.displayingSubMenu) {
+                            item.toggleSubMenu(true);
+                        }
+                        nextFocus += 1;
+                        if (nextFocus >= item.subMenu.length || nextFocus < 0) {
+                            nextFocus = 0;
+                        }
+                        item.subMenu[nextFocus].focus();
+                        focus(item, item.subMenu[nextFocus]); //make it accessible via css visual clues even if the active element is hidden within shadowDOM
+                        break;
                 }
+            }
 
         }));
     };
@@ -132,7 +132,8 @@ function makeExpandable(item) {
     events();
 }
 
-//helper function
+//helper functions
+
 //adds multiple event listeners with identical handlers
 function addEventListeners(element, events, handler) {
     events.split(' ').forEach(event => element.addEventListener(event, handler));
@@ -152,3 +153,4 @@ function focus(item, element) {
         }
     });
 }
+

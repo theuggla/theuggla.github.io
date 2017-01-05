@@ -1,7 +1,27 @@
-/// /menu items has to be of type expandaböe menu item
+/**
+ * A module for a class desktop.
+ * Initiates a web desktop with a menu
+ * and windows to open.
+ *
+ * @author Molly Arhammar
+ * @version 1.0
+ */
+
+
 class Desktop {
+    /**
+     * Initiates the Desktop. Sets up event listeners
+     * and adds sub-menu to the main menu items if such are provided.
+     * @param desktopConfig {object} with params:
+     * menu {[expandable-menu-item]},
+     * space: {node} where the desktop windows lives
+     * and optional:
+     * windowManager: {object} a custom window manager that handles the windows, will otherwise be supplied
+     * subTemplate: {document-fragment} a sub-menu to be added to each of the main menu items
+     * subHandler {function} an event handler to be applies to the sub menu
+     */
     constructor(desktopConfig) {
-        let topWindow = 2;
+        let topWindow = 2; //to keep focused window on top
 
         let mainMenu = desktopConfig.menu;
         let windowSpace = desktopConfig.space;
@@ -46,6 +66,11 @@ class Desktop {
         }, true);
     }
 
+    /**
+     * @param item {HTMLElement} the expandable-menu-item to add the sub-menu to
+     * @param subMenu {HTMLElement} a template of the sub-menu
+     * @param eventHandler {function} the event handler to be applied to the sub menu
+     */
     addSubMenu(item, subMenu, eventHandler) {
         let label = item.getAttribute('label');
 
@@ -58,7 +83,14 @@ class Desktop {
         item.addEventListener('click', eventHandler);
     }
 
+    /**
+     * creates a window manager to handle windows on the desktop.
+     * @param windowSpace {HTMLElement} the space where the windows live
+     * @returns {{createWindow: createWindow, openWindows: openWindows, expand: expand, minimize: minimize, close: close}} an
+     * object with methods to expand, minimize, close all, open new, and get open windows of a certain type.
+     */
     static windowManager(windowSpace) {
+        //keep track of the window space
         let wm = {
             startX: windowSpace.offsetLeft + 20,
             startY: windowSpace.offsetTop + 20,
@@ -66,17 +98,23 @@ class Desktop {
         };
 
         return {
+            /**
+             * Creates a new window and opens it in the window space.
+             * @param type {string} the name of the html-element to create.
+             * @returns {HTMLElement} the newly created window
+             */
             createWindow: function (type) {
-                /*if (!wm[type]) {
+                let aWindow;
+                if (!wm[type]) {
                     let linkTemplate = document.querySelector("#linkTemplate");
                     let link = document.importNode(linkTemplate.content.firstElementChild, true);
                     link.href = "/" + type + ".html";
                     document.head.appendChild(link);
-                }*/
+                }
 
+                aWindow = document.createElement(type);
 
-                let aWindow = document.createElement(type);
-
+                //import pictures for the image gallery
                 if (type === 'image-gallery-app') {
                     if (document.querySelector('#pictures')) {
                         aWindow.appendChild(document.importNode(document.querySelector('#pictures').content, true));
@@ -86,6 +124,7 @@ class Desktop {
                 windowSpace.appendChild(aWindow);
                 setupSpace(type, aWindow);
 
+                //keep track of the open windows
                 if (wm[type].open) {
                     wm[type].open.push(aWindow);
                 } else {
@@ -94,19 +133,29 @@ class Desktop {
 
                 return aWindow;
             },
+            /**
+             * Gets the open windows of a type.
+             * @param type {string} the name of the html-element to check for.
+             * @returns {[HTMLElement]} a node list of the open windows of the type.
+             */
             openWindows: function (type) {
                 if (wm[type]) {
                     let result = [];
                     let windows = wm[type].open;
+                    //filter out the one's that's been closed since the last time
                     result = windows.filter((w) => {
                         return w.open;
                     });
                     wm[type].open = result;
                     return result;
                 } else {
-                    return 0;
+                    return 0; //if no windows are open
                 }
             },
+            /**
+             * Expands all minimized windows of a type.
+             * @param type {string} the name of the html-element to expand.
+             */
             expand: function (type) {
                 let wins = this.openWindows(type);
                 if (wins) {
@@ -115,6 +164,10 @@ class Desktop {
                     });
                 }
             },
+            /**
+             * Minimizes all open windows of a type.
+             * @param type {string} the name of the html-element to minimize.
+             */
             minimize: function (type) {
                 let wins = this.openWindows(type);
                 if (wins) {
@@ -123,6 +176,10 @@ class Desktop {
                     });
                 }
             },
+            /**
+             * Closes all open windows of a type.
+             * @param type {string} the name of the html-element to close.
+             */
             close: function (type) {
                 let wins = this.openWindows(type);
                 if (wins) {
@@ -132,19 +189,22 @@ class Desktop {
                     });
                 }
             }
-        }
+        };
 
         //helper functions
+        // keeps track of the window space so the windows don't all
+        //open on top of each other, and doesn't disappear out
+        //of the space
         function setupSpace(type, space) {
             let destination = {};
             let x;
             let y;
 
-            if (wm[type]) {
-                destination.x = (wm[type].latestCoords.x += 50);
+            if (wm[type]) { //the type already exists
+                destination.x = (wm[type].latestCoords.x += 50);  //create a new space to open the window
                 destination.y = (wm[type].latestCoords.y += 50);
 
-                if (!(withinBounds(space, windowSpace, destination))) {
+                if (!(withinBounds(space, windowSpace, destination))) { //check that the space is within bounds
                     x = wm[type].startCoords.x += 5;
                     y = wm[type].startCoords.y += 5;
                     wm[type].latestCoords.x = x;
@@ -154,7 +214,7 @@ class Desktop {
                     y = destination.y;
                 }
 
-            } else {
+            } else { //create a starting point for the windows of this type
                 destination.x = (wm.startX + (60 * wm.types));
                 destination.y = (wm.startY);
 
@@ -182,6 +242,7 @@ class Desktop {
             space.style.left = x + "px";
         }
 
+        //checks if a space is within bounds
         function withinBounds(element, container, coords) {
             let minX = container.offsetLeft;
             let maxX = (minX + container.clientWidth) - (element.getBoundingClientRect().width);
@@ -198,6 +259,3 @@ class Desktop {
 function addEventListeners (element, events, handler) {
     events.split(' ').forEach(event => element.addEventListener(event, handler));
 }
-
-//export
-module.exports = Desktop;

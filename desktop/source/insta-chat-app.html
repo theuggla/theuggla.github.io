@@ -9,9 +9,10 @@
         <img slot="icon" src="/desktop/source/image/chat-icon.png" />
         <p slot="title">chat</p>
         <expandable-menu-item slot="menubaritem" label="options" column>
-        <a slot="menuitem">options</a>
-        <a slot="subitem" label="options" data-task="namechange" hide>change name</a>
-        <a slot="subitem" label="options" data-task="quit" hide>quit</a>
+            <a slot="menuitem">options</a>
+            <a slot="subitem" label="options" data-task="namechange" hide>change name</a>
+            <a slot="subitem" label="options" data-task="socketchange" hide>choose web socket</a>
+            <a slot="subitem" label="options" data-task="quit" hide>quit</a>
         </expandable-menu-item>
         <expandable-menu-item slot="menubaritem" label="chat" column>
             <a slot="menuitem" data-task="chat">chat</a>
@@ -24,12 +25,23 @@
             <input name="name">
             <button>indeed</button>
         </div>
+        <div slot="content" id="chooseSocket" class="hide">
+            <p>name:</p>
+            <input name="name" id="name">
+            <p>address:</p>
+            <input name="address" id="address">
+            <p>channel:</p>
+            <input name="channel" id="channel">
+            <p>api-key:</p>
+            <input name="apikey" id="apikey">
+            <button>indeed</button>
+        </div>
         <div slot="content" id="about" class="hide">
             <p>made with a web socket! fun. the menu, window and chat are all different web components.
-            chat saves the last logged twenty messages to display the next time on log in. will ask
-            for name when first opened, and after that remember it until it's changed. more than one
-            chat can be opened in different windows, with different names. should be accessible and possible to
-            navigate using only the keyboard. the menu has been visually enhanced when navigating with the arrow keys as
+                chat saves the last logged twenty messages to display the next time on log in. will ask
+                for name and a socket to connect to  when first opened, and after that remember it until it's changed. more than one
+                chat can be opened in different windows, with different names and sockets. should be accessible and possible to
+                navigate using only the keyboard. the menu has been visually enhanced when navigating with the arrow keys as
                 well, for accessibility reasons.</p>
         </div>
     </draggable-window>

@@ -13,8 +13,7 @@ class ImageGalleryApp extends HTMLElement {
      */
     constructor() {
         super();
-        let galleryWindowTemplate = document.querySelector('link[href="/desktop/source/image-gallery-app.html"]').import.querySelector("#galleryWindowTemplate"); //shadow DOM import
-
+        let galleryWindowTemplate = document.querySelector('link[href="/desktop/source/image-gallery-app.html"]').import.querySelector('#galleryWindowTemplate');
 
         let shadowRoot = this.attachShadow({mode: "open"});
         let instance = galleryWindowTemplate.content.cloneNode(true);
@@ -24,7 +23,7 @@ class ImageGalleryApp extends HTMLElement {
     }
 
     /**
-     * Runs when chat is inserted into the DOM.
+     * Runs when gallery is inserted into the DOM.
      * Sets up event listeners for
      * the menu.
      */
@@ -81,14 +80,28 @@ class ImageGalleryApp extends HTMLElement {
         });
     }
 
+    /**
+     * Gets all the added images
+     * @returns {NodeList} a list of all the image elements that are
+     * children of the gallery.
+     */
     getImages() {
         return this.querySelectorAll('img');
     }
 
+    /**
+     * Gets all the imagedescriptions.
+     * @returns {NodeList} a list of all the p elements that are
+     * children of the gallery and has a for-attribute.
+     */
     getDescriptions() {
         return this.querySelectorAll('p[for]');
     }
 
+    /**
+     * Matches descriptions with image-sources via the matching for- and label- attributes
+     * on the p and img elements respectively.
+     */
     updateImages() {
         let imgTemplate = document.querySelector('link[href="/desktop/source/image-gallery-app.html"]').import.querySelector("#imgTemplate"); //shadow DOM import
         let imageGallery = this.shadowRoot.querySelector('image-gallery');
@@ -108,23 +121,31 @@ class ImageGalleryApp extends HTMLElement {
         });
     }
 
+    /**
+     * @returns true if the window containing the app is open.
+     */
     get open() {
         return this.shadowRoot.querySelector('draggable-window').open;
     }
 
+    /**
+     * @returns true if the window containing the app is minimized.
+     */
     get minimized() {
         return this.shadowRoot.querySelector('draggable-window').minimized;
     }
 
+    /**
+     * Sets the minimized property of the window containing the app.
+     * @param minimize {boolean} whether to minimize
+     */
     set minimized(minimize) {
-        if (minimize) {
-            this.shadowRoot.querySelector('draggable-window').minimized = true;
-        } else {
-            this.shadowRoot.querySelector('draggable-window').minimized = false;
-        }
-
+        this.shadowRoot.querySelector('draggable-window').minimized = minimize;
     }
 
+    /**
+     * Closes the window containing the app.
+     */
     close() {
         this.shadowRoot.querySelector('draggable-window').close();
     }

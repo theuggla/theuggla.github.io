@@ -1,4 +1,4 @@
-/*
+/**
 * A module for a custom HTML element draggable-window to form part of a web component.
 * It creates a window that can be moved across the screen, closed and minimized.
 * @author Molly Arhammar
@@ -132,21 +132,16 @@ function makeDraggable(el) {
     };
 
     let events = function() {
-        addEventListeners(el, 'focusin mousedown touchmove', ((event) => {
-            let target;
-            if (event.type === 'touchmove') {
-                target = event.targetTouches[0]; //make work with touch event
-            } else {
-                target = event;
-            }
+        addEventListeners(el, 'focusin mousedown', ((event) => {
+            let target = event;
             arrowDrag = true;
-            if (event.type === 'mousedown' || event.type === 'touchmove') {
+            if (event.type === 'mousedown') {
                 mouseDrag = true;
                 dragoffset.x = target.pageX - el.offsetLeft;
                 dragoffset.y = target.pageY - el.offsetTop;
             }
         }));
-        addEventListeners(el, 'focusout mouseup', (() => {
+        addEventListeners(el, 'focusout mouseup', ((event) => {
             if (event.type === 'mouseup') {
                 if (mouseDrag) {
                     mouseDrag = false;
@@ -155,7 +150,7 @@ function makeDraggable(el) {
                 arrowDrag = false;
             }
         }));
-        addEventListeners(document, 'mousemove keydown touchmove', ((event) => {
+        addEventListeners(document, 'mousemove keydown', ((event) => {
             let destination = {}; //as to not keep polling the DOM
 
             if (mouseDrag) {
@@ -189,7 +184,51 @@ function makeDraggable(el) {
         }));
     };
 
+    //initiate a mouse event from the touch
+    function touchHandler(event) {
+        if (event.target.assignedSlot && event.target.assignedSlot.name === 'title') { //only drag from the title bar on touch, as to not interrupt scrolling
+            let touches = event.changedTouches;
+            let first = touches[0];
+            let type = "";
+
+            switch (event.type) {
+                case "touchstart":
+                    type = "mousedown";
+                    break;
+                case "touchmove":
+                    type = "mousemove";
+                    break;
+                case "touchend":
+                    type = "mouseup";
+                    break;
+                default:
+                    return;
+            }
+
+            //set up the event
+            let simulatedEvent = new MouseEvent(type, {
+                screenX: first.screenX,
+                screenY: first.screenY,
+                clientX: first.clientX,
+                clientY: first.clientY,
+                button: 1,
+                bubbles: true
+
+            });
+
+            el.dispatchEvent(simulatedEvent);
+        }
+    }
+
+    function touchevents() {
+        el.addEventListener("touchstart", touchHandler, true);
+        document.addEventListener("touchmove", touchHandler, true);
+        el.addEventListener("touchend", touchHandler, true);
+        document.addEventListener("touchcancel", touchHandler, true);
+    }
+
     events();
+    touchevents();
 }
 
 //helper function
