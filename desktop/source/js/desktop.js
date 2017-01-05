@@ -253,7 +253,10 @@ let desktopConfig = {
 
 myDesktop = new Desktop(desktopConfig);
 
-
+//initiate serviceworker
+navigator.serviceWorker.register('/desktop/source/serviceWorker.js', {
+    scope: '/'
+});
 
 /**
  * A module for a class desktop.
