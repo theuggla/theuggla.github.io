@@ -195,7 +195,7 @@ function makeDraggable(el) {
             case "touchstart":
                 touchTimer = setTimeout(() => {
                     type = "mousedown";
-                }, 2000);
+                }, 500);
                 break;
             case "touchmove":
                 type = "mousemove";
