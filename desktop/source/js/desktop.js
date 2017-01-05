@@ -257,6 +257,10 @@ let desktopConfig = {
 myDesktop = new Desktop(desktopConfig);
 
 //initiate serviceworker
-navigator.serviceWorker.register('/desktop/source/serviceWorker.js', {
-    scope: '/desktop/source/'
-});
+
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/desktop/source/serviceWorker.js', {
+        scope: '/desktop/source/'
+    });
+}
