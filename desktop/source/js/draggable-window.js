@@ -218,6 +218,7 @@ function makeDraggable(el) {
 
             el.dispatchEvent(simulatedEvent);
         }
+    }
 
         function touchevents() {
             el.addEventListener("touchstart", touchHandler, true);
@@ -225,7 +226,6 @@ function makeDraggable(el) {
             el.addEventListener("touchend", touchHandler, true);
             document.addEventListener("touchcancel", touchHandler, true);
         }
-    }
 
     events();
     touchevents();
