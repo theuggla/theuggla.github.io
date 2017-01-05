@@ -15,7 +15,11 @@ let config = {
         '/desktop/source/image/memory-brick-8.png',
         '/desktop/source/draggable-window.html',
         '/desktop/source/expandable-menu-item.html',
-        '/desktop/source/image/',
+        '/desktop/source/image/chat-icon.png',
+        '/desktop/source/image/memory-icon.png',
+        '/desktop/source/image/gallery-icon.png',
+        '/desktop/source/image/desktop-background.png',
+        '/desktop/source/image/draggable-window-border.png',
         '/desktop/source/javascript/build.js',
         '/desktop/source/stylesheet/style.css',
         '/desktop/source/index.html'
