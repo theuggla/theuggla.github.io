@@ -186,48 +186,48 @@ function makeDraggable(el) {
 
     //initiate a mouse event from the touch
     function touchHandler(event) {
-            let touches = event.changedTouches;
-            let first = touches[0];
-            let type = "";
+        let touches = event.changedTouches;
+        let first = touches[0];
+        let type = "";
 
-            switch (event.type) {
-                case "touchstart":
-                    type = "mousedown";
-                    break;
-                case "touchmove":
-                    type = "mousemove";
-                    break;
-                case "touchend":
-                    type = "mouseup";
-                    break;
-                default:
-                    return;
-            }
-
-            //set up the event
-            let simulatedEvent = new MouseEvent(type, {
-                screenX: first.screenX,
-                screenY: first.screenY,
-                clientX: first.clientX,
-                clientY: first.clientY,
-                button: 1,
-                bubbles: true
-
-            });
-
-            el.dispatchEvent(simulatedEvent);
+        switch (event.type) {
+            case "touchstart":
+                type = "mousedown";
+                break;
+            case "touchmove":
+                type = "mousemove";
+                break;
+            case "touchend":
+                type = "mouseup";
+                break;
+            default:
+                return;
         }
+
+        //set up the event
+        let simulatedEvent = new MouseEvent(type, {
+            screenX: first.screenX,
+            screenY: first.screenY,
+            clientX: first.clientX,
+            clientY: first.clientY,
+            button: 1,
+            bubbles: true
+
+        });
+
+        el.dispatchEvent(simulatedEvent);
     }
 
-        function touchevents() {
-            el.addEventListener("touchstart", touchHandler, true);
-            document.addEventListener("touchmove", touchHandler, true);
-            el.addEventListener("touchend", touchHandler, true);
-            document.addEventListener("touchcancel", touchHandler, true);
-        }
+    function touchevents() {
+        el.addEventListener("touchstart", touchHandler, true);
+        document.addEventListener("touchmove", touchHandler, true);
+        el.addEventListener("touchend", touchHandler, true);
+        document.addEventListener("touchcancel", touchHandler, true);
+    }
 
     events();
     touchevents();
+}
 
 //helper function
 //adds multiple event listeners with identical handlers
