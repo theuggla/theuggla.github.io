@@ -4,7 +4,7 @@ category: publish
 tags: html, css, javascript
 ---
 
-![alt website image][website-image][desktop-link]
+![alt website image][website-image]][desktop-link]
 
 my hobby project, the experimental desktop where I go wild with
 testing out new things. use it with google chrome, because new things.
