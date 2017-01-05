@@ -188,16 +188,17 @@ function makeDraggable(el) {
     function touchHandler(event) {
         let onlongtouch;
         let timer;
-        let touchduration = 500; //length of time we want the user to touch before we do something
         let touches = event.changedTouches;
         let first = touches[0];
         let type = "";
 
+        debugger;
         switch (event.type) {
             case "touchstart":
                 timer = setTimeout(() => {
+                    debugger;
                     type = "mousedown";
-                }, 20);
+                }, 2000);
                 break;
             case "touchmove":
                 type = "mousemove";
