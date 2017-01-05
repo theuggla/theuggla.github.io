@@ -124,6 +124,7 @@ class DraggableWindow extends HTMLElement {
 //helper function
 //makes an element draggable with  mouse, arrows and touch
 function makeDraggable(el) {
+    let touchTimer;
     let arrowDrag;
     let mouseDrag;
     let dragoffset = { //to make the drag not jump from the corner
@@ -187,15 +188,13 @@ function makeDraggable(el) {
     //initiate a mouse event from the touch
     function touchHandler(event) {
         let onlongtouch;
-        let timer;
         let touches = event.changedTouches;
         let first = touches[0];
         let type = "";
 
-        debugger;
         switch (event.type) {
             case "touchstart":
-                timer = setTimeout(() => {
+                touchTimer = setTimeout(() => {
                     debugger;
                     type = "mousedown";
                 }, 2000);
@@ -204,7 +203,8 @@ function makeDraggable(el) {
                 type = "mousemove";
                 break;
             case "touchend":
-                if (timer) {
+                if (touchTimer) {
+                    debugger;
                     clearTimeout(timer);
                 }
                 type = "mouseup";
