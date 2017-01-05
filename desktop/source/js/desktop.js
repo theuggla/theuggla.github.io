@@ -80,7 +80,7 @@ class Desktop {
                 if (!wm[type]) {
                     let linkTemplate = document.querySelector("#linkTemplate");
                     let link = document.importNode(linkTemplate.content.firstElementChild, true);
-                    link.href = "/" + type + ".html";
+                    link.href = "/desktop/source/" + type + ".html";
                     document.head.appendChild(link);
                 }
 
