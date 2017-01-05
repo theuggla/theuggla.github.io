@@ -43,7 +43,8 @@ class InstaChatApp extends HTMLElement {
         //check if a socket has already been chosen
         if (localStorage.chatConfig) {
             let config = JSON.parse(localStorage.chatConfig);
-            chatspace = new InstaChat(config);
+            chatspace = document.createElement('insta-chat-app');
+            chatspace.changeConfig(config);
 
             chatspace.setAttribute('slot', 'content');
             this.shadowRoot.querySelector('draggable-window').appendChild(chatspace);
@@ -86,7 +87,8 @@ class InstaChatApp extends HTMLElement {
 
             localStorage.chatConfig = JSON.stringify(config);
 
-            chatspace = new InstaChat(config);
+            chatspace = document.createElement('insta-chat-app');
+            chatspace.changeConfig(config);
 
             chatspace.setAttribute('slot', 'content');
             this.shadowRoot.querySelector('draggable-window').appendChild(chatspace);
