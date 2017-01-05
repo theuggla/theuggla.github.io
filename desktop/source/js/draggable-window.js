@@ -131,7 +131,7 @@ function makeDraggable(el) {
         y: 0
     };
 
-    let events = function() {
+    let events = function () {
         addEventListeners(el, 'focusin mousedown', ((event) => {
             let target = event;
             arrowDrag = true;
@@ -177,8 +177,8 @@ function makeDraggable(el) {
             }
 
             if (mouseDrag || arrowDrag) {
-                el.style.left = destination.x  + "px";
-                el.style.top = destination.y  + "px";
+                el.style.left = destination.x + "px";
+                el.style.top = destination.y + "px";
             }
 
         }));
@@ -186,6 +186,7 @@ function makeDraggable(el) {
 
     //initiate a mouse event from the touch
     function touchHandler(event) {
+        if (event.target.assignedSlot && event.target.assignedSlot.name === 'title') { //only drag from the title bar on touch, as to not interrupt scrolling
             let touches = event.changedTouches;
             let first = touches[0];
             let type = "";
@@ -216,13 +217,14 @@ function makeDraggable(el) {
             });
 
             el.dispatchEvent(simulatedEvent);
-    }
+        }
 
-    function touchevents() {
-        el.addEventListener("touchstart", touchHandler, true);
-        document.addEventListener("touchmove", touchHandler, true);
-        el.addEventListener("touchend", touchHandler, true);
-        document.addEventListener("touchcancel", touchHandler, true);
+        function touchevents() {
+            el.addEventListener("touchstart", touchHandler, true);
+            document.addEventListener("touchmove", touchHandler, true);
+            el.addEventListener("touchend", touchHandler, true);
+            document.addEventListener("touchcancel", touchHandler, true);
+        }
     }
 
     events();
