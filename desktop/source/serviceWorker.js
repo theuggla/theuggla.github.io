@@ -44,7 +44,7 @@ self.addEventListener('install', event => {
                 '/desktop/source/draggable-window.html',
                 '/desktop/source/expandable-menu-item.html',
                 '/desktop/source/image/',
-                '/desktop/source/javascript/build.js',
+                '/desktop/source/js/desktop.js',
                 '/desktop/source/stylesheet/style.css',
                 '/desktop/source/index.html'
                 ])
