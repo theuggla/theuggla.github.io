@@ -76,15 +76,18 @@ class Desktop {
 
         return {
             createWindow: function (type) {
-                /*if (!wm[type]) {
-                 let linkTemplate = document.querySelector("#linkTemplate");
-                 let link = document.importNode(linkTemplate.content.firstElementChild, true);
-                 link.href = "/" + type + ".html";
-                 document.head.appendChild(link);
-                 }*/
+                let aWindow;
+                if (!wm[type]) {
+                    let linkTemplate = document.querySelector("#linkTemplate");
+                    let link = document.importNode(linkTemplate.content.firstElementChild, true);
+                    link.href = "/" + type + ".html";
+                    document.head.appendChild(link);
+                }
+
+                aWindow = document.createElement(type);
 
 
-                let aWindow = document.createElement(type);
+                aWindow = document.createElement(type);
 
                 if (type === 'image-gallery-app') {
                     if (document.querySelector('#pictures')) {

@@ -3,9 +3,9 @@
     <link rel="stylesheet" href="/desktop/source/stylesheet/style.css" />
     <link rel="import" href="/desktop/source/expandable-menu-item.html" />
     <link rel="import" href="/desktop/source/draggable-window.html" />
-    <link rel="import" href="/desktop/source/memory-app.html" />
+    <!-- <link rel="import" href="/desktop/source/memory-app.html" />
     <link rel="import" href="/desktop/source/image-gallery-app.html" />
-    <link rel="import" href="/desktop/source/insta-chat-app.html" />
+    <link rel="import" href="/desktop/source/insta-chat-app.html" /> -->
     <template id="subMenu">
         <a href="" slot="subitem" label="" data-task="open" hide>open new</a> <!--move to template import?-->
         <a href="" slot="subitem" label="" data-task="expand" hide>expand all</a> <!--move to template import?-->
@@ -29,14 +29,14 @@
 <body>
 <div id="openWindows">
     <draggable-window id="aboutWindow">
-        <p slot="title">about the desktop</p>
+        <p slot="title">about</p>
         <div slot="content">
             <p>be welcomed to my experimental desktop. </p>
             <p>it's built as a single page application and
                 is a testing ground for
                 new stuff, both in the desktop functionality itself and in each of the
-                apps. at the moment the techniques I'm trying out are web components and service workers
-                (try it on mobile! try it offline!) with some web sockets and my dabbings in illustrator
+                apps. at the moment the techniques I'm trying out are web components and service workers (thatks to Lyza Garden
+                for the code base on those!) (also: try the site on mobile! try it offline!) with some web sockets and my dabbings in illustrator
                 thrown in. credit for the icons goes to david purnell of the noun project, and the memory
                 bricks are courtesy of moa alfredsson. the site will store cookies and the likes in your
                 browser (to 'enhance your experience', as they so convincingly say), so if you don't want

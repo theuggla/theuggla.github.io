@@ -1,18 +1,5 @@
 let config = {
     staticCacheItems: [
-        '/desktop/source/memory-app.html',
-        '/desktop/source/memory-game.html',
-        '/desktop/source/stylesheet/memory-game-styles.css',
-        '/desktop/source/stylesheet/memory-app-styles.css',
-        '/desktop/source/image/memory-brick-0.png',
-        '/desktop/source/image/memory-brick-1.png',
-        '/desktop/source/image/memory-brick-2.png',
-        '/desktop/source/image/memory-brick-4.png',
-        '/desktop/source/image/memory-brick-3.png',
-        '/desktop/source/image/memory-brick-5.png',
-        '/desktop/source/image/memory-brick-6.png',
-        '/desktop/source/image/memory-brick-7.png',
-        '/desktop/source/image/memory-brick-8.png',
         '/desktop/source/draggable-window.html',
         '/desktop/source/expandable-menu-item.html',
         '/desktop/source/image/chat-icon.png',
@@ -26,25 +13,14 @@ let config = {
     ]
 };
 
+let CACHE_VERSION = 'v1';
+
 
 self.addEventListener('install', event => {
 
     function onInstall () {
-        return caches.open('installcache')
+        return caches.open(CACHE_VERSION)
             .then(cache => cache.addAll([
-                '/desktop/source/memory-app.html',
-                '/desktop/source/memory-game.html',
-                '/desktop/source/stylesheet/memory-game-styles.css',
-                '/desktop/source/stylesheet/memory-app-styles.css',
-                '/desktop/source/image/memory-brick-0.png',
-                '/desktop/source/image/memory-brick-1.png',
-                '/desktop/source/image/memory-brick-2.png',
-                '/desktop/source/image/memory-brick-4.png',
-                '/desktop/source/image/memory-brick-3.png',
-                '/desktop/source/image/memory-brick-5.png',
-                '/desktop/source/image/memory-brick-6.png',
-                '/desktop/source/image/memory-brick-7.png',
-                '/desktop/source/image/memory-brick-8.png',
                 '/desktop/source/draggable-window.html',
                 '/desktop/source/expandable-menu-item.html',
                 '/desktop/source/image/chat-icon.png',
@@ -64,29 +40,22 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('activate', (event) => {
-    console.log("SW activated");
+    event.waitUntil(
+        caches.keys().then(function (cacheNames) {
+            return Promise.all(
+                cacheNames.map(function (cacheName) {
+                    if (cacheName !== CACHE_VERSION) {
+                        return caches.delete(cacheName);
+                    }
+                })
+            );
+        })
+    );
 });
 
 self.addEventListener('fetch', (event) => {
-    function shouldHandleFetch (event, opts) {
-        let request            = event.request;
-        let url                = new URL(request.url);
-        let criteria           = {
-            isGETRequest: request.method === 'GET',
-            isFromMyOrigin: url.origin === self.location.origin
-        };
-
-        // Create a new array with just the keys from criteria that have
-        // failing (i.e. false) values.
-        let failingCriteria    = Object.keys(criteria)
-            .filter(criteriaKey => !criteria[criteriaKey]);
-
-        // If that failing array has any length, one or more tests failed.
-        return !failingCriteria.length;
-    }
-
     function onFetch (event, opts) {
-        let request      = event.request;
+        let request = event.request;
         let acceptHeader = request.headers.get('Accept');
         let resourceType = 'static';
         let cacheKey;
@@ -98,24 +67,12 @@ self.addEventListener('fetch', (event) => {
         }
 
         cacheKey = resourceType;
-
-        if (resourceType === 'content') {
-            // Use a network-first strategy.
-            event.respondWith(
-                fetch(request)
-                    .then(response => addToCache(cacheKey, request, response))
-                    .catch(() => fetchFromCache(event))
-                    .catch(() => offlineResponse(opts))
-            );
-        } else {
-            // Use a cache-first strategy.
-            event.respondWith(
-                fetchFromCache(event)
-                    .catch(() => fetch(request))
-                    .then(response => addToCache(cacheKey, request, response))
-                    .catch(() => offlineResponse(resourceType, opts))
-            );
-        }
+        // Use a cache-first strategy.
+        event.respondWith(
+            fetchFromCache(event)
+                .catch(() => fetch(request))
+                .then(response => addToCache(cacheKey, request, response))
+        );
     }
 
     function addToCache (cacheKey, request, response) {
@@ -138,18 +95,5 @@ self.addEventListener('fetch', (event) => {
         });
     }
 
-    function offlineResponse (resourceType, opts) {
-        if (resourceType === 'image') {
-            return new Response(opts.offlineImage,
-                { headers: { 'Content-Type': 'image/svg+xml' } }
-            );
-        } else if (resourceType === 'content') {
-            return caches.match(opts.offlinePage);
-        }
-        return undefined;
-    }
-
-    if (shouldHandleFetch(event, config)) {
-        onFetch(event, config);
-    }
+    onFetch(event, config);
 });
