@@ -255,5 +255,5 @@ myDesktop = new Desktop(desktopConfig);
 
 //initiate serviceworker
 navigator.serviceWorker.register('/desktop/source/serviceWorker.js', {
-    scope: '/'
+    scope: '/desktop/source/'
 });
