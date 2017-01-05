@@ -4,7 +4,7 @@ category: publish
 tags: html, css, javascript
 ---
 
-![alt website image][website-image]
+![alt website image][website-image][desktop-link]
 
 my hobby project, the experimental desktop where I go wild with
 testing out new things. use it with google chrome, because new things.
@@ -13,7 +13,7 @@ little apps to try out new techniques.
 [here it lives][desktop-link]
 [on github][github-link]
 
-[desktop-link] https://theuggla.github.io/desktop/source
+[desktop-link]: https://theuggla.github.io/desktop/source
 [github-link]: https://github.com/theuggla/theuggla.github.io/desktop
 
 [website-image]: ../assets/projectimages/experimentaldesktop.png
