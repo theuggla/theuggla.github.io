@@ -15,15 +15,21 @@ html {
 body {
     background-color: lightblue;
     min-height: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 a:link {
     text-decoration: none;
-    color: grey;
+    color: midnightblue;
 }
 
 a:visited {
-    color:grey;
+    color:midnightblue;
+}
+
+a:hover {
+    font-weight: bold;
 }
 
 img {
