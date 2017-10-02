@@ -13,7 +13,7 @@ When you want to compile your C# code you've written in vscode, this will at fir
 
 It will probably start with you following one of the .exe tutorials that's out there for a single file, and then it will go as follows:  
 
-You will get an assembly error for your other files in the same namespace ("the namespace blah could not be found, are you missing a using directive or an assembly reference?"). You are getting the assembly reference error because, probably, you haven't included all the files (very deceptive error, somehow the internet tutorials expect everyone to just be aware of this without saying) - if you have more than the "Program.cs" file or whatever the entry point is called, you have to explicitly include. "csc Program.cs model/*.cs view/*.cs controller/*.cs" to include all the files in folders called model, view and controller, for example.  
+You will get an assembly error for your other files in the same namespace ("the namespace blah could not be found, are you missing a using directive or an assembly reference?"). You are getting the assembly reference error because, probably, you haven't included all the files (very deceptive error, somehow the internet tutorials expect everyone to just be aware of this without saying) - if you have more than the "Program.cs" file or whatever the entry point is called, you have to explicitly include. "csc Program.cs model/ * .cs view/ * .cs controller/ * .cs" to include all the files in folders called model, view and controller, for example.  
  
 ### the frustrated stage
  
@@ -28,7 +28,7 @@ You'll make more tea.
 
 ### the second surge
 
-You'll fins lots of articles on how to accomplish this with something that does not work anymore, from before dotnet decided on compiling with a csproj-file. Then finally you'll find these two articles and rejoice, because they finally explain how to package your exe in a folder together with the dll-files needed:
+You'll find lots of articles on how to accomplish this with something that does not work anymore, from before dotnet decided on compiling with a csproj-file. Then finally you'll find these two articles and rejoice, because they finally explain how to package your exe in a folder together with the dll-files needed:
 
 #### the saviours
 
