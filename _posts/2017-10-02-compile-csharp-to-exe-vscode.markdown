@@ -31,21 +31,27 @@ You'll make more tea.
 You'll fins lots of articles on how to accomplish this with something that does not work anymore, from before dotnet decided on compiling with a csproj-file. Then finally you'll find these two articles and rejoice, because they finally explain how to package your exe in a folder together with the dll-files needed:
 
 #### the saviours
+
+#### 1
 - https://blogs.msdn.microsoft.com/luisdem/2017/03/19/net-core-1-1-how-to-publish-a-self-contained-application/
- 
+
+#### 2
 - https://docs.microsoft.com/en-us/dotnet/core/deploying/deploy-with-cli
 docs.microsoft.com
 
+ 
+### the sad stage 
 
 You'll realize you have to compile it differently for all operating systems and versions of those systems you want it to run on. You will resign to doing this. You will compile for widows 10, 64 bits. You will zip the file. You will email it till the windows computer. You will think it will work.  
  
 It will not.  
- 
-### the sad stage 
 
 You will discover the windows power-shell and navigate on the command line to the .exe, trying to run it. You will hope it will work. It will not. You will consider abandoning tea and starting on the whiskey.  
  
-You will, in the end, find this lovely person: https://github.com/dotnet/core/issues/759 Who had the same issue, and realize that you are not to zip the folder that dotnet creates for you, by the name of windows-64x, in the folder publish, but instead the folder inside of that folder, also named publish.  
+You will, in the end, find this lovely person:
+~ https://github.com/dotnet/core/issues/759 ~
+
+who had the same issue, and realize that you are not to zip the folder that dotnet creates for you, by the name of windows-64x, in the folder publish, but instead the folder inside of that folder, also named publish.  
  
 You will celebrate. You will navigate to the correct directory with windows PowerShell, you will write the name of your .exe and press enter.  
  
@@ -54,23 +60,20 @@ It still will not work.
 
 ### the end
 
-You will not kill your computer.  
- 
-You will realize that windows does not trust your carefully compiled file (oh, the irony), and you have to write ./Program.exe (or whatever your file is called, starting with the "./")  
- 
-This will finally work.  
- 
-Congratulations!  
+You will not kill your computer. You will realize that windows does not trust your carefully compiled file (oh, the irony), and you have to write ./Program.exe (or whatever your file is called, starting with the "./") This will finally work. Congratulations!  
 
 ### basically
 
-1. Include all of your folders and files when doing csc on the command line, if you don't have external dependecies, including "System".  
+#### 1
+Include all of your folders and files when doing csc on the command line, if you don't have external dependecies, including "System".  
+
+#### 2
+If you do, compile everything to a folder containing the dll-files needed, for a chosen operating system by following this:
+https://docs.microsoft.com/en-us/dotnet/core/deploying/deploy-with-cli or this:  
 
 
-2. If you do, compile everything to a folder containing the dll-files needed, for a chosen operating system (@hobbe win10-64x is fine?) by following this: https://docs.microsoft.com/en-us/dotnet/core/deploying/deploy-with-cli or this: https://blogs.msdn.microsoft.com/luisdem/2017/03/19/net-core-1-1-how-to-publish-a-self-contained-application/  
+#### 3 
+Zip the folder within the folder within the folder (the lowest level publish folder you can find)  
 
 
-3. Zip the folder within the folder within the folder (the lowest level publish folder you can find)  
-
-
-4.  Run it in/with windows PowerShell by command-lineing there as usual and then writing "./Program.exe", substituting "Program" for your actual file name.
+#### 4 Run it in/with windows PowerShell by command-lineing there as usual and then writing "./Program.exe", substituting "Program" for your actual file name.
