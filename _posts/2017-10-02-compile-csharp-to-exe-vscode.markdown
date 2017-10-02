@@ -17,7 +17,7 @@ You will get an assembly error for your other files in the same namespace ("the 
  
 ### the frustrated stage
  
-The you do this and you'll be faced with a potential second error - if you included external libraries (for example for persistance, for example Newtonsoft.Json) these will not be found. It still won't work. You'll investigate. You'll drink lots of tea and want to throw stuff.  
+Then you do this and you'll be faced with a potential second error - if you included external libraries (for example for persistance, for example Newtonsoft.Json) these will not be found. It still won't work. You'll investigate. You'll drink lots of tea and want to throw stuff.  
  
  
 Regardless of what happened with the last step, you'll realize that what you've made won't actually run on a system that does not have dotnet installed already. Since the instructions are to make an exe, we will assume that the program is supposed to run on windows, since that is where exe lives. If you want the program to run on windows without that machine needing to have stuff installed already, you need to make an exe as above, including all of your own files, and placing that in a folder that includes all of the dll-files that your program depends on - these files being all of the "using" direcitives you have in your program, including, but not limited to, the Newtonsoft.Json and all the "System" System.Linq" or whatever references.  
@@ -76,4 +76,5 @@ https://docs.microsoft.com/en-us/dotnet/core/deploying/deploy-with-cli or this:
 Zip the folder within the folder within the folder (the lowest level publish folder you can find)  
 
 
-#### 4 Run it in/with windows PowerShell by command-lineing there as usual and then writing "./Program.exe", substituting "Program" for your actual file name.
+#### 4
+Run it in/with windows PowerShell by command-lineing there as usual and then writing "./Program.exe", substituting "Program" for your actual file name.
