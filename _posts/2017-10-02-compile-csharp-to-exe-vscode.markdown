@@ -13,7 +13,7 @@ It will probably start with you following one of the .exe tutorials that's out t
 
 
 
- You will get an assempbly error for your other files in the same namespace ("the namespace blah could not be found, are you missing a using directive or an assembly reference?"). You are getting the assembly reference error because, probably, you haven't included all the files (very deceptive error, somehow the internet tutorials expect everyone to just be aware of this without saying) - if you have more than the "Program.cs" file or whatever the entry point is called, you have to explicitly include. "csc Program.cs model/*.cs view/*.cs controller/*.cs" to include all the files in folders called model, view and controller, for example.  
+ You will get an assembly error for your other files in the same namespace ("the namespace blah could not be found, are you missing a using directive or an assembly reference?"). You are getting the assembly reference error because, probably, you haven't included all the files (very deceptive error, somehow the internet tutorials expect everyone to just be aware of this without saying) - if you have more than the "Program.cs" file or whatever the entry point is called, you have to explicitly include. "csc Program.cs model/*.cs view/*.cs controller/*.cs" to include all the files in folders called model, view and controller, for example.  
  
  
 
