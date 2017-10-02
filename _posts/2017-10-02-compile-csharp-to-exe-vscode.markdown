@@ -1,6 +1,6 @@
 ---
 url: /compile-csharp-to-exe-vscode
-title: "the joys of compiling your c# project into a self contained exe from vscode - a frustrated turorial"
+title: the joys of compiling your c# project into a self contained exe from vscode - a frustrated turorial
 layout: post
 comments: true
 ---
