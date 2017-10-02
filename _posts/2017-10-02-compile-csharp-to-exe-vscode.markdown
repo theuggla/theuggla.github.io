@@ -7,7 +7,7 @@ comments: true
 
 ### the vision
 
-When you want to compile your C# code you've written in vscode, this will at first seem like an easy task - it is not. There are loads of tutorials on how to, which at first seems promising, but they all have one of two fatal flaws: either they explain how to compile a project containing of just one file ("HelloWorld.cs") or they explain how to compile into a dll-file. Whish is all fine and dandy if you want to compile into a dll file and run it on linux of with dotnet installed, but perhaps you just want a single .exe from a bunch of different files to run on Windows and then all hell breaks loose.  
+When you want to compile your C# code you've written in vscode, this will at first seem like an easy task - it is not. There are loads of tutorials on how to, which at first seems promising, but they all have one of two fatal flaws: either they explain how to compile a project containing of just one file ("HelloWorld.cs") or they explain how to compile into a dll-file. Which is all fine and dandy if you want to compile into a dll file and run it on linux with dotnet installed, but perhaps you just want a single .exe from a bunch of different files to run on Windows and then all hell breaks loose.  
 
 ### the hopeful stage
 
@@ -68,8 +68,8 @@ You will not kill your computer. You will realize that windows does not trust yo
 Include all of your folders and files when doing csc on the command line, if you don't have external dependecies, including "System".  
 
 #### 2
-If you do, compile everything to a folder containing the dll-files needed, for a chosen operating system by following this:
-https://docs.microsoft.com/en-us/dotnet/core/deploying/deploy-with-cli or this:  
+If you do have external dependencies, compile everything to a folder containing the dll-files needed, for a chosen operating system by following this:
+https://docs.microsoft.com/en-us/dotnet/core/deploying/deploy-with-cli  
 
 
 #### 3 
