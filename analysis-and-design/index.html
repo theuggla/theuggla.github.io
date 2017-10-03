@@ -21,7 +21,7 @@
             <p><a class="in-progress">Download zip-archive with full solution WS1-3, Grade 2-4</a></p>
         <section>
             <h2>Workshop 1</h2>
-            <p><a <a href="./zips/ws1-exc-peer-review.zip">Download zip-archive with full solution for all grades</a></p>
+            <p><a <a href="./zips/ws1-complete.zip">Download zip-archive with full solution for all grades</a></p>
             <div>
                 <h3>Grade 2</h3>
                 <p><a href="./zips/ws1-grade2.zip">Download zip-archive with full solution</a></p>
@@ -73,9 +73,54 @@
             <h2>Workshop 2</h2>
             <div>
                 <h3>Grade 2</h3>
-                <p><a class="in-progress">Download zip-archive with full solution</a></p>
-                <p><a class="in-progress">Source code on Github</a></p>
-                <p><a class="in-progress">UML-diagrams</a></p>
+                <p><a href="./zips/ws2-grade2.zip">Download zip-archive with full solution</a></p>
+                <p><a href="./zips/ws2-grade2-runnable-application-win10x86.zip">Download zip-archive with runnable, compiled version of the app for Win10x86</a></p>
+                <h4>Instructions to run the application.</h4>
+                <div>
+                        <p>To run the application, do as follows:</p>
+                        <ol>
+                            <li>Download the runnable version.</li>
+                            <li>Unzip the directory.</li>
+                            <li>Open the directory.</li>
+                            <li>Double click on the file named "implementation.exe".</li>
+                            <li> The app should open in a command window. If the app doesn't open, do the following:</li>
+                            <li>Restore the dependencies with <code>"dotnet restore"</code></li>
+                            <li>Open Windows PowerShell</li>
+                            <li>cd into the unzipped directory.</li>
+                            <li>Do the command <code>"./implementation.exe"</code></li>
+                        </ol>
+                    </div>
+                <p><a href="https://github.com/theuggla/analysis-and-design-exercises/tree/master/ws2/grade%202/implementation">Source code on Github</a></p>
+                <h4>Instructions to compile the application.</h4>
+                <div>
+                        <p>To download and compile from the command line, do as follows:</p>
+                        <ol>
+                            <li>Install dotnet depending on your operating system, instructions <a href="https://www.microsoft.com/net/core">here</a></li>
+                            <li>Download the source code, cd into the project directory, and initiate a new project with the command <code>"dotnet new console"</code></li>
+                            <li>Replace the code in newly created Program.cs with the code in Application.cs.</li>
+                            <li>Run the command <code>"dotnet add package Newtonsoft.Json --version 10.0.3"</code> to install the Newtonsoft.Json dependency.</li>
+                            <li>
+                                Create a "runtime identifier" for the runtime(s) you would like to compile for, choosing from this <a href="https://docs.microsoft.com/en-us/dotnet/core/rid-catalog">list</a>, like so:
+                                <code>
+                                        <pre>&lt;PropertyGroup&gt;
+        &lt;RuntimeIdentifiers>win10-x64;osx.10.11-x64&lt;/RuntimeIdentifiers&gt;
+    &lt;/PropertyGroup&gt;
+                                        </pre>
+                                </code>
+                            </li>
+                            <li>Restore the dependencies with <code>"dotnet restore"</code></li>
+                            <li>Compile the project with the name of the runtime from your runtime identifier: <code>"dotnet publish -c Release -r win10-x64"</code></li>
+                            <li>Launch by starting from your project file, finding the directory at the path bin/Release/netcoreapp1.1/[your-selected-runtime]/publish</li>
+                            <li>Launch the applicationin a console by running the file named implementation.exe, in a platform-specific way depending on the runtime you chose.</li>
+                        </ol>
+                    </div>
+                <h3>Design-diagrams</h3>
+                <h4>Sequence diagram - Register Boat</h4>
+                    <p><a href="./images/design-model-ws2-grade2-register-boat.png"><img src="./images/design-model-ws2-grade2-register-boat.png" alt="UML sequence diagram over a register boat use case"></img></a></p>
+                <h4>Sequence diagram - View Member</h4>
+                    <p><a href="./images/design-model-ws2-grade2-view-member.png"><img src="./images/design-model-ws2-grade2-view-member.png" alt="UML sequence diagram over a view member use case"></img></a></p>
+                <h4>Class diagram</h4>
+                    <p><a href="./images/design-model-ws2-grade2-class-diagram.jpg"><img src="./images/design-model-ws2-grade2-class-diagram.jpg" alt="UML class diagram over the whole member registry-system"></img></a></p>
             </div>
             <div>
                 <h3>Grade 3</h3>
