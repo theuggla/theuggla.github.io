@@ -24,7 +24,7 @@ theme: lysande
 # Collections
 collections:
   projects:
-    categories: [code, design, publish]
+    categories: [code, design, published]
 
 # Defaults
 defaults:

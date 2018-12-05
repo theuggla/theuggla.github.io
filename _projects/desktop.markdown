@@ -1,6 +1,6 @@
 ---
 title: "experimental desktop"
-category: publish
+category: published
 tags: html, css, javascript
 ---
 
@@ -14,6 +14,6 @@ little apps to try out new techniques.
 [on github][github-link]
 
 [desktop-link]: https://theuggla.github.io/desktop/source
-[github-link]: https://github.com/theuggla/theuggla.github.io/desktop
+[github-link]: https://github.com/theuggla/theuggla.github.io/desktop/source
 
 [website-image]: ../assets/projectimages/experimentaldesktop.png

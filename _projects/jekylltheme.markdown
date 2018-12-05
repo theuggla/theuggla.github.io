@@ -1,6 +1,6 @@
 ---
 title: "jekyll theme"
-category: code, publish
+category: code, published
 tags: liquid, html, sass
 ---
 

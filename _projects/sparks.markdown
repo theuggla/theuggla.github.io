@@ -1,6 +1,6 @@
 ---
 title: "spark the revolution"
-category: publish
+category: published
 tags: react, html, css, javascript, travis, heroku, webpack
 ---
 
