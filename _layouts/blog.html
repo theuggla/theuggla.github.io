@@ -22,7 +22,7 @@ layout: default
             <a href="{{post.url}}">
                 <h3 id="{{post.title | slugify}}">{{ post.title }}</h3>
             </a>
-            <pre>{{ post.content }}</pre>
+            {{ post.content }}
             {% if site.disqus_shortname %}<a class="commentcount" href="{{ post.url }}#disqus_thread" data-disqus-indentifier="{{post.url}}">here be comments</a>{% endif %}
         </div>
         {% endfor %}
