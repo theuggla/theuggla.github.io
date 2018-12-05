@@ -24,8 +24,8 @@ You'll make more tea.
 You'll find lots of articles on how to accomplish this with something that does not work anymore, from before dotnet decided on compiling with a csproj-file. Then finally you'll find these two articles and rejoice, because they finally explain how to package your exe in a folder together with the dll-files needed:
 
 #### the saviours
-- https://blogs.msdn.microsoft.com/luisdem/2017/03/19/net-core-1-1-how-to-publish-a-self-contained-application/
-- https://docs.microsoft.com/en-us/dotnet/core/deploying/deploy-with-cli
+1 https://blogs.msdn.microsoft.com/luisdem/2017/03/19/net-core-1-1-how-to-publish-a-self-contained-application/
+2 https://docs.microsoft.com/en-us/dotnet/core/deploying/deploy-with-cli
 docs.microsoft.com
  
 ### the sad stage 
@@ -41,7 +41,7 @@ It still will not work.
 You will not kill your computer. You will realize that windows does not trust your carefully compiled file (oh, the irony), and you have to write ./Program.exe (or whatever your file is called, starting with the "./") This will finally work. Congratulations!  
 
 ### basically
-1. Include all of your folders and files when doing csc on the command line, if you don't have external dependecies, including "System".  
-2. If you do have external dependencies, compile everything to a folder containing the dll-files needed, for a chosen operating system by following this: https://docs.microsoft.com/en-us/dotnet/core/deploying/deploy-with-cli  
-3. Zip the folder within the folder within the folder (the lowest level publish folder you can find)  
-4. Run it in/with windows PowerShell by command-lineing there as usual and then writing "./Program.exe", substituting "Program" for your actual file name.
+1 Include all of your folders and files when doing csc on the command line, if you don't have external dependecies, including "System".  
+2 If you do have external dependencies, compile everything to a folder containing the dll-files needed, for a chosen operating system by following this: https://docs.microsoft.com/en-us/dotnet/core/deploying/deploy-with-cli  
+3 Zip the folder within the folder within the folder (the lowest level publish folder you can find)  
+4 Run it in/with windows PowerShell by command-lineing there as usual and then writing "./Program.exe", substituting "Program" for your actual file name.
