@@ -62,44 +62,31 @@ The first alternative would be hoping for the environmental conciousness of the 
 
 
 
-
+## References
 [1] Community, "FAQ - Bitcoin," bitcoin.org, 2009-2018 [Online] Found at: https://bitcoin.org/en/faq#what-is-bitcoin. [Retrieved: Januari 25, 2018].
-
 
 [2]  S. Nakamoto, "A Peer-to-Peer Electronic Cash System," 2009 [Online] Found at: Bitcoin.org, https://bitcoin.org/bitcoin.pdf. [Retrieved: January 22, 2018].
 
-
 [3] Community, "FAQ - Bitcoin," bitcoin.org, 2009-2018 [Online] Found at: https://bitcoin.org/en/vocabulary#mining. [Retrieved: January 27, 2018].
-
 
 [4] K. O'Dwyer and D. Malone, "Bitcoin mining and its energy footprint," The Economics of Information Security and Privacy.: Irish Signals & Systems Conference 2014 and 2014 China-Ireland International Conference on Information and Communications Technologies, vol. 25, June 2013 [Online] Found at: IEEExplore, http://ieeexplore.ieee.org/. [Retrieved: February 1, 2018].
 
-
 [5] G. Hileman and M. Rauchs, "Global Cryptocurrency Benchmarking Study," 2017 [Online] Found at: https://www.jbs.cam.ac.uk/fileadmin/user_upload/research/centres/alternative-finance/downloads/2017-global-cryptocurrency-benchmarking-study.pdf. [Retrieved: January 22, 2018].
-
 
 [6]  -, "Bitcoin price," World Coin Index, 2018 [Online] Found at: https://www.worldcoinindex.com/coin/bitcoin. [Retrieved: Januari 29, 2018].
 
-
 [7] E.  Ou, "Bitcoin Is Greener Than Its Critics Think," Bloomberg, december 2017 [Online] Found at: https://www.bloomberg.com/view/articles/2017-12-07/bitcoin-is-greener-than-its-critics-think. [Retrieved: Februari 2, 2018].
-
 
 [8] Community, "FAQ - Bitcoin," bitcoin.org, 2009-2018 [Online] Found at: https://bitcoin.org/en/faq#isnt-bitcoin-mining-a-waste-of-energy. [Hämtad: Januari 27, 2018].
 
-
 [9]  Becker J., Breuker D., Heide T., Holler J., Rauer H.P., Böhme R., "Can We Afford Integrity by Proof-of-Work? Scenarios Inspired by the Bitcoin Currency," i The Economics of Information Security and Privacy, Böhme R. , Red. Berlin: Springer, 2013. s. 135-156.
-
 
 [10] A. Herrtig, "Ethereums Big Switch – The New Roadmap to Proof-of-Stake," Coindesk, May 2017 [Online] Found at: https://www.coindesk.com/ethereums-big-switch-the-new-roadmap-to-proof-of-stake/. [Retrieved: Februari 3, 2018]. 
 
-
 [11] J. Manning, "Proof-of-Work vs. Proof-of-Stake Explained," Ethnews, November 2016 [Online] Found at: https://www.ethnews.com/proof-of-work-vs-proof-of-stake-explained [Retrieved: February 3, 2018].
-
 
 [12] A. Pompliano, "The World’s First Waste-To-Energy Crypto Mine," Noteworthy, November 2017 [Online] Found at: https://blog.usejournal.com/the-worlds-first-waste-to-energy-crypto-mine-2638a6728efa [Retrieved: February 2, 2018].
 
-
 [13] T. Hunt, "Solar-Powered Bitcoin Mining Could Be a Very Profitable Business Model," Green Tech Media, September 2017 [Online] Found at: https://www.greentechmedia.com/articles/read/solar-powered-bitcoin-mining-could-be-a-very-profitable-business-model#gs.7U3e3YA [Retrieved: Fabruary 2, 2018].
-
 
 [14] A. Shoker, "Sustainable blockchain through proof of exercise,"  Network Computing and Applications (NCA), 2017 IEEE 16th International Symposium, November 2017 [Online] Found at: IEEExplore, http://ieeexplore.ieee.org/. [Retrieved: January 27 2018].
