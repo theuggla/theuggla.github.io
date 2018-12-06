@@ -5,7 +5,7 @@ layout: post
 comments: true
 ---
 
-The thesis for my Univeristy Degree is downloadable <a href='/assets/Tillgänglighet, testning och förtroende - Molly Arhammar.pdf'>--here--</a>. It's fully written in Swedish and concerns the Swedish municipalities, so for those of you having a pressing need to jump into Swedish specifics, this is your chance. A short presentation of the paper can be watched <a href='https://youtu.be/y5oBVbK2xBY'>--here--</a>.
+The thesis for my University Degree is downloadable <a href='/assets/Tillgänglighet, testning och förtroende - Molly Arhammar.pdf'>--here--</a>. It's fully written in Swedish and concerns the Swedish municipalities, so for those of you having a pressing need to jump into Swedish specifics, this is your chance. A short presentation of the paper can be watched <a href='https://youtu.be/y5oBVbK2xBY'>--here--</a>.
 
 #### Abstract - Tillgänglighet, testning och förtroende - konsten att inte vara ett funktionshinder
 
