@@ -7,10 +7,8 @@ comments: true
 
 The issue about Bitcoin's environmental impact has been made more relevant over the last few years through the rise of Bitcoin. Why do we care about the environmental impact of Bitcoin? Is it large enough that we should care? If it is that large, could it be different? Could it be smaller? Or is it unavoidable, a neccessary fact of life, and thusly not worth caring about? This article will aim to answer both of these questions – the size and the necissity of the environmantal impact - in a way that makes it clear what we disagree about, if we disagree. I do expect us to disagree about how large the impact is, and how unneccessary it is, and therefore I will make my reasoning about both these issues transparent enough that we can disagree on specific points with all the facts in hand. I do not expect us to disagree about the fact that there is such a thing as environmental impact, or that it is worth trying to minimize it. If you believe either of these things this article is not for you, Donald, because I will not be defending my stance on them.  
 
-  
 
 How will we be defining, then how "large" and "unneccessary" the impact it? Both words are necessarily subjective but must be made more specific, to allow us to disagree in the constructive way mentioned above; the constructive way in which two people can disagree when both of them is not Donald Trump. For the purpouses of this article, large will be discussed in relation to other things. How does the environmental impact of Bitcoin compare to the environmental impact of these other things out there? Unneccessary will be defined as could have been avoided while still getting the same result, and so we will discuss ways in which this impact could have been lessened. Are there such ways? And what are the results we want to get out of Bitcoin, which might suffer from our avoiding ways? (Behold – another prospective point of disagreement on the horizon).  
-
 
 
 First and foremost: to discuss Bitcoin we must have an understanding of what Bitcoin is and how it works. I will keep it brief and focus on the neccessary point to understand when it comes to the discussion about the environment, because every discussion about Bitcoin could possible always get very long winded. Point one: What is Bitcoin? Bitcoin, says the community documentation [1] is "a distributed cryptocurrency". Oh well. The "founder" (this parts is i quotes due to his evasive nature - does he exist? Is he a group of people? No one knows) of Bitcoin, Satoshi Nakamoto, called his article "A Peer-to-Peer Electronic Cash System"[2]. These two statements are much the same, except for the fact that Satoshi Nakamoto talks about the "crypto" part within his article instead of in the title of it. But what does it mean? Currency we know, that is when we exchange something for something else. Crypto means that cryptography – some sort of obscuring, encoding – is used to store, validate, and exchange information about these currency transactions. Peer-to-peer, or distributed, means that everyone is the owner of this information. There is no central agency in control. 
@@ -30,7 +28,6 @@ So, how to stop people from changing the transactions of the latest block, or ch
    
    
 At this stage, we introduce an artificial hardship, designed to make the hashing of the block head take longer – basically we say that you have to keep adding a random number to the hash until the hash looks a certain way, and so you all have to race to find the correct random number. This racing to find the correct number to be awarded with coins is calles mining Bitcoins. Every 2016th block the system will evaluate how fast the numbers were found on average, and up the difficulty if they were found quicker than ten minutes. This means that the more computational power that joins the network, the artificial difficulty to find numbers will be increased, to keep the time to ten minutes. It also means that to keep your chain the longest chain, you have to be able to keep finding the next correct hash quicker than everyone else can find the next hash, consistently, block after block, and the only way to do this is to have more than fifty percent of the computational power in the network. This ensures that the system can be trusted, since mathematically, the majority is always right.
-
 
 
 So where is the main environmental impact? It is in the energy consumption that keeps this network of validating transactions and blocks in the blockchain.[4] And where is the main enery comsumption in this validating? It is in the artificially constructed proof-of-work needed to build the trust in the system, since there is no centralized unit that ensures that trust. [3, 4] We need to make the largest pool of computer power the most trusted one, to make a majority of the system users have control over the system. 
@@ -54,39 +51,24 @@ It can be avoided by lessening the energy consumption. This would mean that eith
 It can be avoided by lessening the environmental impact of the energy consumption. This would mean one of two things - changing the energy used, or preserving the energy lost. This is the path the "official Bitcoin documentation" seems to assume will win. [8]
 
 
-
 Regardless of where we disagree on these points, it is clear that the answer to our original question -  does Bitcoin have an unneccessary large environmental impact – is not unambiguous. Even so, there is quite a clear case for arguing that the  impact is large, and there are more than one possible way of avoiding at least some of that impact. These ways could be boiled down to abandoning the system (1), changing the system (2), and changing the world around the system (3). The drawbacks of those strategies against the desired result of Bitcoin would have to be discussed further, if one wished to reach some sort of consesus. In addition, if we wanted to go with one of the strategies, the question of how would be the next step – to lessen the energy consumption by moving from proof-of-work to proof-of-stake would need a majority desicion amongst the users of the Bitcoin system. The problem with such a desicion is that the people profiting of the current prof-of-work system by making money of it would presumably not want to abandon it, and those people are by neccissity of the design of the blockchain system more than half of its participants. To lessen the environmental impact of the energy consumption would need either for the miners to decide to use renewable energy, as some have already done [12], or for them to conserve the heat the computers give of when mining [13]. 
 
 
 The first alternative would be hoping for the environmental conciousness of the miners, and the second to hope to reach their inner Scrooge – it would be more profitable for them to not loose the heat made from the hardware, and thus they would make more money.  To make any sort of outside political desicion about Bitcoin is hard, due to its distributed nature. It would take every country to independently make restrictions on energy consumption to have any sort of substantial impact, and that is a question that falls outside the scope of discussing Bitcoin specifically. In essence, to abandon or change the system would change the desired results and functionality of Bitcoin, whereas to change the world would require well, changing the world. Regardless of opinion of this it is clear that there is a discussion to be had, and that the field of Web Science is an arena apt for parts of that discussion to take place. 
 
 
-
 ## References
 [1] Community, "FAQ - Bitcoin," bitcoin.org, 2009-2018 [Online] Found at: https://bitcoin.org/en/faq#what-is-bitcoin. [Retrieved: Januari 25, 2018].
-
 [2]  S. Nakamoto, "A Peer-to-Peer Electronic Cash System," 2009 [Online] Found at: Bitcoin.org, https://bitcoin.org/bitcoin.pdf. [Retrieved: January 22, 2018].
-
 [3] Community, "FAQ - Bitcoin," bitcoin.org, 2009-2018 [Online] Found at: https://bitcoin.org/en/vocabulary#mining. [Retrieved: January 27, 2018].
-
 [4] K. O'Dwyer and D. Malone, "Bitcoin mining and its energy footprint," The Economics of Information Security and Privacy.: Irish Signals & Systems Conference 2014 and 2014 China-Ireland International Conference on Information and Communications Technologies, vol. 25, June 2013 [Online] Found at: IEEExplore, http://ieeexplore.ieee.org/. [Retrieved: February 1, 2018].
-
 [5] G. Hileman and M. Rauchs, "Global Cryptocurrency Benchmarking Study," 2017 [Online] Found at: https://www.jbs.cam.ac.uk/fileadmin/user_upload/research/centres/alternative-finance/downloads/2017-global-cryptocurrency-benchmarking-study.pdf. [Retrieved: January 22, 2018].
-
 [6]  -, "Bitcoin price," World Coin Index, 2018 [Online] Found at: https://www.worldcoinindex.com/coin/bitcoin. [Retrieved: Januari 29, 2018].
-
 [7] E.  Ou, "Bitcoin Is Greener Than Its Critics Think," Bloomberg, december 2017 [Online] Found at: https://www.bloomberg.com/view/articles/2017-12-07/bitcoin-is-greener-than-its-critics-think. [Retrieved: Februari 2, 2018].
-
 [8] Community, "FAQ - Bitcoin," bitcoin.org, 2009-2018 [Online] Found at: https://bitcoin.org/en/faq#isnt-bitcoin-mining-a-waste-of-energy. [Hämtad: Januari 27, 2018].
-
 [9]  Becker J., Breuker D., Heide T., Holler J., Rauer H.P., Böhme R., "Can We Afford Integrity by Proof-of-Work? Scenarios Inspired by the Bitcoin Currency," i The Economics of Information Security and Privacy, Böhme R. , Red. Berlin: Springer, 2013. s. 135-156.
-
 [10] A. Herrtig, "Ethereums Big Switch – The New Roadmap to Proof-of-Stake," Coindesk, May 2017 [Online] Found at: https://www.coindesk.com/ethereums-big-switch-the-new-roadmap-to-proof-of-stake/. [Retrieved: Februari 3, 2018]. 
-
 [11] J. Manning, "Proof-of-Work vs. Proof-of-Stake Explained," Ethnews, November 2016 [Online] Found at: https://www.ethnews.com/proof-of-work-vs-proof-of-stake-explained [Retrieved: February 3, 2018].
-
 [12] A. Pompliano, "The World’s First Waste-To-Energy Crypto Mine," Noteworthy, November 2017 [Online] Found at: https://blog.usejournal.com/the-worlds-first-waste-to-energy-crypto-mine-2638a6728efa [Retrieved: February 2, 2018].
-
 [13] T. Hunt, "Solar-Powered Bitcoin Mining Could Be a Very Profitable Business Model," Green Tech Media, September 2017 [Online] Found at: https://www.greentechmedia.com/articles/read/solar-powered-bitcoin-mining-could-be-a-very-profitable-business-model#gs.7U3e3YA [Retrieved: Fabruary 2, 2018].
-
 [14] A. Shoker, "Sustainable blockchain through proof of exercise,"  Network Computing and Applications (NCA), 2017 IEEE 16th International Symposium, November 2017 [Online] Found at: IEEExplore, http://ieeexplore.ieee.org/. [Retrieved: January 27 2018].
