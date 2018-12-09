@@ -20,6 +20,10 @@ $background-image: "../assets/backgrounds/" + "{{ site.background_image }}";
             margin: $center;
             margin-top: $base-spacing * 2;
         }
+
+        p {
+            padding-bottom: $base-spacing * 2;
+        }
     }
 
     #projects {
