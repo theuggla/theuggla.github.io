@@ -57,7 +57,7 @@ Regardless of where we disagree on these points, it is clear that the answer to 
 The first alternative would be hoping for the environmental conciousness of the miners, and the second to hope to reach their inner Scrooge – it would be more profitable for them to not loose the heat made from the hardware, and thus they would make more money.  To make any sort of outside political desicion about Bitcoin is hard, due to its distributed nature. It would take every country to independently make restrictions on energy consumption to have any sort of substantial impact, and that is a question that falls outside the scope of discussing Bitcoin specifically. In essence, to abandon or change the system would change the desired results and functionality of Bitcoin, whereas to change the world would require well, changing the world. Regardless of opinion of this it is clear that there is a discussion to be had, and that the field of Web Science is an arena apt for parts of that discussion to take place. 
 
 
-## References
+### References
 [1] Community, "FAQ - Bitcoin," bitcoin.org, 2009-2018 [Online] Found at: https://bitcoin.org/en/faq#what-is-bitcoin. [Retrieved: Januari 25, 2018].
 [2]  S. Nakamoto, "A Peer-to-Peer Electronic Cash System," 2009 [Online] Found at: Bitcoin.org, https://bitcoin.org/bitcoin.pdf. [Retrieved: January 22, 2018].
 [3] Community, "FAQ - Bitcoin," bitcoin.org, 2009-2018 [Online] Found at: https://bitcoin.org/en/vocabulary#mining. [Retrieved: January 27, 2018].
