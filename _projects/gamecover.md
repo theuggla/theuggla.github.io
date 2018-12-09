@@ -9,5 +9,5 @@ tags: illustrator
 a mockup of a potential xbox game cover, freehand
 sketching in illustrator.
 
-[game-image]: ../assets/projectimages/gamecover.png
-[image-link]: ../assets/projectimages/gamecover.png
+[game-image]: ../assets/projects/images/gamecover.png
+[image-link]: ../assets/projects/images/gamecover.png

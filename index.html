@@ -23,9 +23,9 @@ menu: main
     {% assign c = site.collections | where:'label', collectionName | first %}
     {% for category in c.categories limit:3 %}
     <div id="{{category}}">
-        <img src="/assets/{{category}}.png" />
+        <img src="/assets/projects/symbols/{{category}}.png" />
         <h2>{{category}}</h2>
-        <a href="/projects.html#{{category}}">go to {{category}} projects</a>
+        <a href="/projects#{{category}}">go to {{category}} projects</a>
     </div>
     {% endfor %}
 </section>

@@ -12,4 +12,4 @@ making system, for example.
 [on github][github-link]
 
 [github-link]: https://github.com/theuggla/employee-register
-[ref-image]: ../assets/projectimages/employeerecord.png
+[ref-image]: ../assets/projects/images/employeerecord.png

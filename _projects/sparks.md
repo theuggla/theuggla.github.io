@@ -15,4 +15,4 @@ but this is a working beta version.
 [desktop-link]: https://spark-the-revolution.herokuapp.com
 [github-link]: https://github.com/theuggla/shiny-volunteers
 
-[website-image]: ../assets/projectimages/sparks.png
+[website-image]: ../assets/projects/images/sparks.png

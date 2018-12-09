@@ -96,7 +96,7 @@ html, body {
     font-family: $base-font-family;
     text-align: justify;
     background-color: $grey-color-light;
-    background-image: url(../assets/backgrounds/lovpapper.jpg);
+    background-image: url($background-image);
 }
 
 .wrapper {

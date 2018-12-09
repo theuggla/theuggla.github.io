@@ -11,5 +11,5 @@ used on this site. made to be used for a portfolio-based site.
 [on github][github-link]
 
 [github-link]: https://github.com/theuggla/lysande-jekyll-theme
-[ref-image]: ../assets/projectimages/jekylltheme.png
+[ref-image]: ../assets/projects/images/jekylltheme.png
 

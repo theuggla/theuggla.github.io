@@ -16,4 +16,4 @@ little apps to try out new techniques.
 [desktop-link]: https://theuggla.github.io/desktop/source
 [github-link]: https://github.com/theuggla/theuggla.github.io/desktop/source
 
-[website-image]: ../assets/projectimages/experimentaldesktop.png
+[website-image]: ../assets/projects/images/experimentaldesktop.png

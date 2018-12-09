@@ -7,10 +7,10 @@ layout: default
 <div class="blog">
     <nav class="localnav">
         <ul>
-            <h3>posts</h3>
+            <a id="page-header" href="{{page.url}}"><h3>posts</h3></a>
             {% for post in site.posts %}
             <li>
-                <a href="#{{post.title | slugify}}">{{ post.title | downcase}}</a>
+                <a href="{{post.url}}">{{ post.title | downcase}}</a>
             </li>
             {% endfor %}
         </ul>
@@ -18,12 +18,9 @@ layout: default
     <div id="posts">
         {% for post in site.posts %}
         <div id="post">
-            <p class="date">{{ post.date | date_to_string }}</p>
-            <a href="{{post.url}}">
-                <h3 id="{{post.title | slugify}}">{{ post.title }}</h3>
-            </a>
-            {{ post.content }}
-            {% if site.disqus_shortname %}<a class="commentcount" href="{{ post.url }}#disqus_thread" data-disqus-indentifier="{{post.url}}">here be comments</a>{% endif %}
+            <p class="date">{{ post.date | date_to_string | upcase }}</p>
+            <a href="{{post.url}}"><h3 id="{{post.title | slugify}}">{{ post.title }}</h3></a>{{ post.excerpt }}<a href="{{post.url}}" class="read-more">read more</a>
+            {% if site.disqus_shortname %}<a class="commentcount" href="{{ post.url }}#disqus_thread" data-disqus-indentifier="{{post.id}}">0 comments</a>{% endif %}
         </div>
         {% endfor %}
     </div>

@@ -12,4 +12,4 @@ player and dealer written for twenty-one card game.
 [on github][github-link]
 
 [github-link]: https://github.com/theuggla/twenty-one-card-mechanics
-[ref-image]: ../assets/projectimages/twentyone.png
+[ref-image]: ../assets/projects/images/twentyone.png

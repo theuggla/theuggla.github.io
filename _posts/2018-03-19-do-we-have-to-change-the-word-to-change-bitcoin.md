@@ -1,6 +1,6 @@
 ---
 url: /do-we-have-to-change-the-word-to-change-bitcoin
-title: do we have to change the world to change bitcoin? musings on bitcoins environmental impact
+title: do we have to change the world to change bitcoin? musings on bitcoin's environmental impact
 layout: post
 comments: true
 ---

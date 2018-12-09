@@ -1,15 +1,16 @@
+# Base configs
 title: molly arhammar - portfolio
 email: mollyarhammar@gmail.com
 description: >
   If Hermione wrote Java. {I code stuff and design stuff and like
   communication and integration and kind people. Look at my things.}
-baseurl: ""
 url: https://theuggla.github.io
 author: Molly Arhammar
-image: share.png
+share_image: share.png
+background_image: default_rustic.jpg
 rss: true
 
-#usernames
+# Usernames
 disqus_shortname: mollyarhammar
 github_username: theuggla
 youtube_channel: UC1SUarN21dtTZ4VudH39Ycg
@@ -18,9 +19,16 @@ upwork_userID: _~01beeabe9b31cd4558
 linkedin_usernameURL: molly-arhammar
 
 
-# Build settings
+# Jekyll build settings
 markdown: kramdown
 theme: lysande
+permalink: pretty
+baseurl: ""
+exclude: 
+   - Gemfile
+   - Gemfile.lock
+   - lysande.gemspec
+   - README.md
 
 # Collections
 collections:
