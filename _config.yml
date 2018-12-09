@@ -11,11 +11,12 @@ rss: true
 
 #usernames
 disqus_shortname: mollyarhammar
-twitter_username: theuggla
 github_username: theuggla
-tumblr_username: theuggla
-instagram_username: mollyarhammar
-facebook_username: molly.arhammar
+youtube_channel: UC1SUarN21dtTZ4VudH39Ycg
+skype_inviteURL: eUUh6HLdOlp4
+upwork_userID: _~01beeabe9b31cd4558
+linkedin_usernameURL: molly-arhammar
+
 
 # Build settings
 markdown: kramdown
