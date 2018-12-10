@@ -21,7 +21,7 @@ layout: default
             <p class="date">{{ post.date | date_to_string | upcase }}</p> 
             <a href="{{post.url}}"><h3 id="{{post.title | slugify}}">{{ post.title }}</h3></a>{{ post.excerpt }}<a href="{{post.url}}" class="read-more">read more</a>
             {% if site.disqus_shortname %}
-                {% assign str = page.url | remove: "/" | prepend: "/" | append: post.url | prepend: site.url | prepend: site.baseurl %}
+                {% assign str = post.url | prepend: site.url | prepend: site.baseurl %}
                 {% assign num = str | size | minus: 1 %}
                 <a class="commentcount" href="{{ str | slice: 0, num | append: "#disqus_thread" }}"></a>{% endif %}
         </div>
