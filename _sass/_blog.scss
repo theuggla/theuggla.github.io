@@ -161,11 +161,21 @@
             margin-bottom: -1em;
             padding-left: $base-spacing;
         }
-    }
+
+        .post-content {
+            margin-top: $base-spacing * 2;
+            padding-bottom: $base-spacing * 2;
+            white-space: pre-wrap;
     
-    .post-content {
-        margin-top: $base-spacing * 2;
-        padding-bottom: $base-spacing * 2;
-        white-space: pre-wrap;
+            ol, ul {
+                list-style-type: initial !important;
+
+                li {
+                    display: list-item;
+                    margin-top: -2em;
+                    margin-left: 1em;
+                }
+            }
+        }
     }
 }
