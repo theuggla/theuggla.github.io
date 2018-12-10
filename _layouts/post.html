@@ -26,6 +26,7 @@ main_url: /blog
         <div id="disqus_thread">
         <script type="text/javascript">
             var disqus_shortname = "{{site.disqus_shortname}}";
+            var disqus_identifier = "{{page.url}}";
 
             (function() {
                 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -34,7 +35,6 @@ main_url: /blog
             })();
         </script>
         <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         {% endif %}
         </div>
     </div>
