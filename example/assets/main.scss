@@ -1,0 +1,91 @@
+---
+---
+
+// set background-image variable
+$background-image: "../assets/backgrounds/" + "{{ site.background_image }}";
+
+// import bases
+@import '_base';
+@import '_menu';
+
+// home styles
+    #about {
+        width: 30%;
+        float: left;
+        padding-bottom: $base-spacing;
+
+        @include small-laptop {
+            width: 80%;
+            float: none;
+            margin: $center;
+            margin-top: $base-spacing * 2;
+        }
+
+        p {
+            padding-bottom: $base-spacing * 2;
+        }
+    }
+
+    #projects {
+        float: right;
+        width: 60%;
+        margin-top: $base-sizing * 2;
+        text-align: right;
+
+        h2 {
+            font-family: $headlines;
+            font-size: $big-font-size;
+            margin-bottom: 0.3em;
+        }
+
+        div {
+            border-right-style: ridge;
+            border-width: $border-width;
+            width: 33%;
+            float: left;
+            padding: $base-spacing / 2;
+            padding-bottom: 0;
+        }
+
+        img {
+            float: left;
+            max-height: 2.5em;
+            max-width: 5em;
+        }
+
+        @include small-laptop {
+            float: none;
+            clear: both;
+            width: 100%;
+            margin: $center;
+            margin-top: $base-spacing * 2;
+            padding: $base-spacing;
+            overflow: auto;
+        }
+
+            @include tablet {
+                div {
+                    float: none;
+                    margin: $center;
+                    padding: $base-spacing;
+                    width: 50%;
+                    border-style: none;
+                    border-bottom-style: ridge;
+                    text-align: center;
+                }
+
+                div:last-of-type {
+                    border-bottom-style: none;
+                }
+
+                img {
+                    max-width: 2em;
+                }
+            }
+
+    }
+
+@import '_projects';
+@import '_blog';
+@import '_responsive';
+
