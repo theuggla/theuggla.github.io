@@ -20,7 +20,7 @@ linkedin_usernameURL: molly-arhammar
 
 # Jekyll build settings
 markdown: kramdown
-theme: lysande
+remote_theme: theuggla/lysande-jekyll-theme
 permalink: pretty
 baseurl: ""
 exclude: 
