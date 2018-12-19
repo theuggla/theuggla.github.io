@@ -300,6 +300,9 @@ nav.three, nav.two, nav.one {
       display: block;
       clear: both;
       text-align: right; }
+      .blog .localnav ul {
+        clear: both;
+        text-align: right; }
     .blog .localnav a {
       font-size: 0.64em;
       text-align: right;
