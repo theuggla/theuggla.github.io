@@ -42,9 +42,21 @@ $background-image: "../assets/backgrounds/" + "{{ site.background_image }}";
             border-right-style: ridge;
             border-width: $border-width;
             width: 33%;
-            float: left;
+            float: right;
+            text-align: right;
             padding: $base-spacing / 2;
             padding-bottom: 0;
+        }
+
+        div:first-of-type {
+            border-right-style: none;
+            border-width: $border-width;
+            width: 33%;
+            float: right;
+            text-align: right;
+            padding: $base-spacing / 2;
+            padding-bottom: 0;
+            padding-right: 3em;
         }
 
         img {

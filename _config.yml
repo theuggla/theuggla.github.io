@@ -26,13 +26,12 @@ baseurl: ""
 exclude: 
    - Gemfile
    - Gemfile.lock
-   - lysande.gemspec
    - README.md
 
 # Collections
 collections:
   projects:
-    categories: [code, design, published]
+    categories: [code, published]
 
 # Defaults
 defaults:
